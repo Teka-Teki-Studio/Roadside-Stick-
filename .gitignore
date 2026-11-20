@@ -1,0 +1,23 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python Caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary & Scratch Files
+.omo/
+scratch/
+*.tmp
+*compiled.js
+
+# Local Backup Archives
+backups/
+
+# Node & Editor
+node_modules/
+.vscode/
+.idea/

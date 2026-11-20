@@ -1,0 +1,65 @@
+{
+  "max_world_x": 4800,
+  "safe_zone_x": 220,
+  "chunk_width": 640,
+  "speed_base": 230,
+  "speed_bonus_per_stick": 4,
+  "distance_bonus_per_chunk": 0.12,
+  "swap_cooldown": 0.25,
+  "zones": {
+    "0": "Rumah",
+    "1": "Tepi Hutan",
+    "2": "Hutan Rimba",
+    "3": "Hutan Gelap"
+  },
+  "sticks": {
+    "1": {
+      "name": "Ranting Kering",
+      "value": 5,
+      "region": "Tepi Hutan",
+      "desc": "Kayu rapuh di Tepi Hutan"
+    },
+    "2": {
+      "name": "Ranting Bercabang",
+      "value": 12,
+      "region": "Tepi Hutan",
+      "desc": "Ranting Y di Tepi Hutan"
+    },
+    "3": {
+      "name": "Ranting Berlumut",
+      "value": 20,
+      "region": "Batas Rimba",
+      "desc": "Meliuk hijau di batas Rimba"
+    },
+    "4": {
+      "name": "Ranting Pinus",
+      "value": 35,
+      "region": "Hutan Rimba",
+      "desc": "Harum damar di dahan Rimba"
+    },
+    "5": {
+      "name": "Ranting Kayu Besi",
+      "value": 55,
+      "region": "Rimba Dalam",
+      "desc": "Batang pejal kelabu di Rimba"
+    },
+    "6": {
+      "name": "Ranting Kristal",
+      "value": 80,
+      "region": "Hutan Gelap",
+      "desc": "Tetesan getah beku di Hutan Gelap"
+    },
+    "7": {
+      "name": "Ranting Kuno",
+      "value": 120,
+      "region": "Dahan Hutan Gelap",
+      "desc": "Guratan spiral ungu di Hutan Gelap"
+    },
+    "8": {
+      "name": "Ranting Rembulan",
+      "value": 200,
+      "region": "Puncak Ujung Dunia",
+      "desc": "Cahaya perak di Ujung Dunia"
+    }
+  }
+}
