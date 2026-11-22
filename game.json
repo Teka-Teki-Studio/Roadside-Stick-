@@ -1988,16 +1988,630 @@
       "disableInputWhenNotFocused": false,
       "events": [
         {
-          "colorB": 240,
-          "colorG": 240,
-          "colorR": 240,
-          "comment": "STUB — diisi pada Tahap 3 (Lobby)",
-          "comment2": "",
-          "type": "BuiltinCommonInstructions::Comment"
+          "type": "BuiltinCommonInstructions::Group",
+          "title": "[T3] Lobby — Inisialisasi Tampilan & Variabel",
+          "parameters": [
+            ""
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DepartScene"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "Txt_LobbyMoney",
+                    "=",
+                    "\"$\" + ToString(Variable(Save.money))"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "Txt_LobbyLevel",
+                    "=",
+                    "\"CURRENT JOURNEY: LEVEL 0\" + ToString(Variable(Save.level))"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Group",
+          "title": "[T3] Lobby — Interaksi Tombol (Hover & Pressed 3D Feedback)",
+          "parameters": [
+            ""
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsCursorOnObject"
+                  },
+                  "parameters": [
+                    "Btn_Play",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangeAnimation"
+                      },
+                      "parameters": [
+                        "Btn_Play",
+                        "=",
+                        "2"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonPressed",
+                        "inverted": true
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangeAnimation"
+                      },
+                      "parameters": [
+                        "Btn_Play",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsCursorOnObject",
+                    "inverted": true
+                  },
+                  "parameters": [
+                    "Btn_Play",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeAnimation"
+                  },
+                  "parameters": [
+                    "Btn_Play",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsCursorOnObject"
+                  },
+                  "parameters": [
+                    "Btn_Shop",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangeAnimation"
+                      },
+                      "parameters": [
+                        "Btn_Shop",
+                        "=",
+                        "2"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonPressed",
+                        "inverted": true
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangeAnimation"
+                      },
+                      "parameters": [
+                        "Btn_Shop",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsCursorOnObject",
+                    "inverted": true
+                  },
+                  "parameters": [
+                    "Btn_Shop",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeAnimation"
+                  },
+                  "parameters": [
+                    "Btn_Shop",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsCursorOnObject"
+                  },
+                  "parameters": [
+                    "Btn_Index",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangeAnimation"
+                      },
+                      "parameters": [
+                        "Btn_Index",
+                        "=",
+                        "2"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonPressed",
+                        "inverted": true
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangeAnimation"
+                      },
+                      "parameters": [
+                        "Btn_Index",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsCursorOnObject",
+                    "inverted": true
+                  },
+                  "parameters": [
+                    "Btn_Index",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeAnimation"
+                  },
+                  "parameters": [
+                    "Btn_Index",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsCursorOnObject"
+                  },
+                  "parameters": [
+                    "Btn_Upgrade",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangeAnimation"
+                      },
+                      "parameters": [
+                        "Btn_Upgrade",
+                        "=",
+                        "2"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonPressed",
+                        "inverted": true
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangeAnimation"
+                      },
+                      "parameters": [
+                        "Btn_Upgrade",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsCursorOnObject",
+                    "inverted": true
+                  },
+                  "parameters": [
+                    "Btn_Upgrade",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeAnimation"
+                  },
+                  "parameters": [
+                    "Btn_Upgrade",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
-      "instances": [],
+      "instances": [
+        {
+          "name": "Spr_LobbyBg",
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 576,
+          "customSize": true,
+          "layer": "Base",
+          "zOrder": 0,
+          "angle": 0,
+          "locked": true
+        },
+        {
+          "name": "Spr_PlayerLobby",
+          "x": 60,
+          "y": 170,
+          "width": 360,
+          "height": 300,
+          "customSize": true,
+          "layer": "UI",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Btn_Play",
+          "x": 520,
+          "y": 140,
+          "width": 420,
+          "height": 64,
+          "customSize": true,
+          "layer": "UI",
+          "zOrder": 10,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_BtnPlay",
+          "x": 670,
+          "y": 156,
+          "width": 140,
+          "height": 36,
+          "customSize": false,
+          "layer": "UI",
+          "zOrder": 15,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Btn_Shop",
+          "x": 520,
+          "y": 224,
+          "width": 200,
+          "height": 56,
+          "customSize": true,
+          "layer": "UI",
+          "zOrder": 10,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_BtnShop",
+          "x": 585,
+          "y": 238,
+          "width": 80,
+          "height": 30,
+          "customSize": false,
+          "layer": "UI",
+          "zOrder": 15,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Btn_Index",
+          "x": 740,
+          "y": 224,
+          "width": 200,
+          "height": 56,
+          "customSize": true,
+          "layer": "UI",
+          "zOrder": 10,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_BtnIndex",
+          "x": 790,
+          "y": 238,
+          "width": 100,
+          "height": 30,
+          "customSize": false,
+          "layer": "UI",
+          "zOrder": 15,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Btn_Upgrade",
+          "x": 520,
+          "y": 300,
+          "width": 420,
+          "height": 64,
+          "customSize": true,
+          "layer": "UI",
+          "zOrder": 10,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_BtnUpgrade",
+          "x": 670,
+          "y": 316,
+          "width": 140,
+          "height": 36,
+          "customSize": false,
+          "layer": "UI",
+          "zOrder": 15,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_LobbyLevel",
+          "x": 48,
+          "y": 28,
+          "width": 400,
+          "height": 32,
+          "customSize": false,
+          "layer": "UI",
+          "zOrder": 10,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_LobbyMoney",
+          "x": 860,
+          "y": 28,
+          "width": 120,
+          "height": 32,
+          "customSize": false,
+          "layer": "UI",
+          "zOrder": 10,
+          "angle": 0,
+          "locked": false
+        }
+      ],
       "layers": [
+        {
+          "ambientLightColorR": 255,
+          "ambientLightColorG": 255,
+          "ambientLightColorB": 255,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "",
+          "effects": [],
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "Base",
+          "renderingType": "",
+          "timeScale": 1,
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ]
+        },
         {
           "ambientLightColorB": 0,
           "ambientLightColorG": 0,
@@ -2049,7 +2663,612 @@
       ],
       "mangledName": "Lobby",
       "name": "Lobby",
-      "objects": [],
+      "objects": [
+        {
+          "assetStoreId": "",
+          "name": "Spr_LobbyBg",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Normal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "bg_lobby.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 836,
+                        "y": 470
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Spr_PlayerLobby",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_lobby_waistup.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 12,
+                        "y": 10
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Btn_Play",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Normal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_play_normal.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 210,
+                        "y": 32
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hover",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_play_hover.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 210,
+                        "y": 32
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Pressed",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_play_pressed.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 210,
+                        "y": 32
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Btn_Shop",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Normal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_shop_normal.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 100,
+                        "y": 28
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hover",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_shop_hover.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 100,
+                        "y": 28
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Pressed",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_shop_pressed.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 100,
+                        "y": 28
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Btn_Index",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Normal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_index_normal.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 100,
+                        "y": 28
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hover",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_index_hover.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 100,
+                        "y": 28
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Pressed",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_index_pressed.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 100,
+                        "y": 28
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Btn_Upgrade",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Normal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_upgrade_normal.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 210,
+                        "y": 32
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hover",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_upgrade_hover.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 210,
+                        "y": 32
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Pressed",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_upgrade_pressed.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 210,
+                        "y": 32
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_BtnPlay",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "bold": true,
+          "italic": false,
+          "underlined": false,
+          "color": "255;255;255",
+          "fontResourceName": "vcr.ttf",
+          "size": 28,
+          "string": "MAINKAN",
+          "isOutlineEnabled": false,
+          "outlineThickness": 0,
+          "outlineColor": "0;0;0",
+          "isShadowEnabled": false,
+          "shadowAngle": 90,
+          "shadowDistance": 0,
+          "shadowColor": "0;0;0",
+          "shadowOpacity": 0
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_BtnShop",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "bold": true,
+          "italic": false,
+          "underlined": false,
+          "color": "255;255;255",
+          "fontResourceName": "vcr.ttf",
+          "size": 22,
+          "string": "TOKO",
+          "isOutlineEnabled": false,
+          "outlineThickness": 0,
+          "outlineColor": "0;0;0",
+          "isShadowEnabled": false,
+          "shadowAngle": 90,
+          "shadowDistance": 0,
+          "shadowColor": "0;0;0",
+          "shadowOpacity": 0
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_BtnIndex",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "bold": true,
+          "italic": false,
+          "underlined": false,
+          "color": "255;255;255",
+          "fontResourceName": "vcr.ttf",
+          "size": 22,
+          "string": "KOLEKSI",
+          "isOutlineEnabled": false,
+          "outlineThickness": 0,
+          "outlineColor": "0;0;0",
+          "isShadowEnabled": false,
+          "shadowAngle": 90,
+          "shadowDistance": 0,
+          "shadowColor": "0;0;0",
+          "shadowOpacity": 0
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_BtnUpgrade",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "bold": true,
+          "italic": false,
+          "underlined": false,
+          "color": "255;255;255",
+          "fontResourceName": "vcr.ttf",
+          "size": 28,
+          "string": "UPGRADE",
+          "isOutlineEnabled": false,
+          "outlineThickness": 0,
+          "outlineColor": "0;0;0",
+          "isShadowEnabled": false,
+          "shadowAngle": 90,
+          "shadowDistance": 0,
+          "shadowColor": "0;0;0",
+          "shadowOpacity": 0
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_LobbyMoney",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "bold": true,
+          "italic": false,
+          "underlined": false,
+          "color": "255;255;255",
+          "fontResourceName": "vcr.ttf",
+          "size": 24,
+          "string": "$0",
+          "isOutlineEnabled": false,
+          "outlineThickness": 0,
+          "outlineColor": "0;0;0",
+          "isShadowEnabled": false,
+          "shadowAngle": 90,
+          "shadowDistance": 0,
+          "shadowColor": "0;0;0",
+          "shadowOpacity": 0
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_LobbyLevel",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "bold": true,
+          "italic": false,
+          "underlined": false,
+          "color": "255;255;255",
+          "fontResourceName": "vcr.ttf",
+          "size": 20,
+          "string": "CURRENT JOURNEY: LEVEL 01",
+          "isOutlineEnabled": false,
+          "outlineThickness": 0,
+          "outlineColor": "0;0;0",
+          "isShadowEnabled": false,
+          "shadowAngle": 90,
+          "shadowDistance": 0,
+          "shadowColor": "0;0;0",
+          "shadowOpacity": 0
+        }
+      ],
       "objectsFolderStructure": {
         "folderName": "__ROOT"
       },
@@ -2068,7 +3287,26 @@
         "snap": false,
         "zoomFactor": 1
       },
-      "variables": []
+      "variables": [],
+      "objectsGroups": [
+        {
+          "name": "Grp_Buttons",
+          "objects": [
+            {
+              "name": "Btn_Play"
+            },
+            {
+              "name": "Btn_Shop"
+            },
+            {
+              "name": "Btn_Index"
+            },
+            {
+              "name": "Btn_Upgrade"
+            }
+          ]
+        }
+      ]
     },
     {
       "b": 0,
@@ -2702,6 +3940,123 @@
         "kind": "image",
         "metadata": "",
         "name": "bg_lobby.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/robi_lobby_waistup.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_lobby_waistup.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/UI/BUTTONS/btn_play_normal.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "btn_play_normal.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/UI/BUTTONS/btn_play_hover.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "btn_play_hover.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/UI/BUTTONS/btn_play_pressed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "btn_play_pressed.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/UI/BUTTONS/btn_shop_normal.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "btn_shop_normal.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/UI/BUTTONS/btn_shop_hover.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "btn_shop_hover.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/UI/BUTTONS/btn_shop_pressed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "btn_shop_pressed.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/UI/BUTTONS/btn_index_normal.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "btn_index_normal.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/UI/BUTTONS/btn_index_hover.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "btn_index_hover.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/UI/BUTTONS/btn_index_pressed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "btn_index_pressed.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/UI/BUTTONS/btn_upgrade_normal.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "btn_upgrade_normal.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/UI/BUTTONS/btn_upgrade_hover.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "btn_upgrade_hover.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/UI/BUTTONS/btn_upgrade_pressed.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "btn_upgrade_pressed.png",
         "smoothed": false,
         "userAdded": true
       }
