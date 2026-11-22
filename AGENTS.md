@@ -70,6 +70,7 @@ Pengguna akan memberi perintah seperti: "Jalankan Tahap 1 — Boot ..." dan mene
 17. Kerjakan hanya tahap yang diminta. Jangan menambah fitur di luar brief.
 18. Bila ambigu dan taruhannya kecil: pilih default di file ini, tandai sebagai ASUMSI di laporan. Bila ambigu dan mahal diulang (menyentuh banyak scene, merombak struktur data): tanya dulu.
 19. Jangan menulis pesan panjang. Laporan mengikuti format Bab 15.
+20. **Sinkronisasi README.md (Wajib):** Setiap kali AI melakukan commit & push ke Git (khususnya branch `danans-version`), AI WAJIB memperbarui file `README.md` di root project. Update mencakup: nomor versi terkini, tanggal update, ringkasan changelog/fitur baru, dan status checklist aset/tahap produksi terkini agar dokumentasi repository selalu sinkron dengan state kode.
 
 ---
 
@@ -214,6 +215,7 @@ Layer `HUD` dan `Modals` tidak ikut bergerak dengan kamera.
 6. Implementasikan bertahap, validasi tiap langkah.
 7. Uji sejauh yang bisa dibuktikan (6.3).
 8. Perbarui `AI_NOTES/PROGRESS.md` (status, keputusan, asumsi, hal belum selesai).
+8b. Perbarui `README.md` (versi, changelog terkini, checklist tahap dan aset) sebelum melakukan commit dan push.
 9. Kirim laporan (Bab 15).
 
 ### 6.2 Tahap 0 — Foundation (otomatis, sekali saja, idempotent)
