@@ -33,3 +33,15 @@
 - **Spinner / Indicator:** Dipindahkan ke sisi kanan loading bar (X: 968, Y: 514, W: 24, H: 24) sejajar vertikal dengan bar di dalam layar 1024x576.
 - **Tipografi:** Menggunakan font cr.ttf, warna putih murni 255;255;255, outline nonaktif (isOutlineEnabled: false).
 - **Validasi:** Kompilasi libGD 5.6.287 sukses untuk seluruh 7 scene dengan 0 error/diagnostics.
+
+### Update 2026-11-23 03:35 — Tahap 3: Mockup Interaktif Lobby
+- **Karakter Idle (Robi):** Dicrop dari sprite sheet acuan (
+obi_sd.png), ditampilkan di sisi kiri Lobby dengan portrait waist-up besar (kepala-pinggang) tajam pixel-art.
+- **4 Tombol Interaktif 3D:**
+  1. Tombol Atas: Btn_Play (Mainkan) — Kuning 3D (420×64 px)
+  2. Tombol Kiri Bawah: Btn_Shop (Toko) — Kuning 3D (200×56 px)
+  3. Tombol Kanan Bawah: Btn_Index (Koleksi) — Ungu 3D (200×56 px)
+  4. Tombol Bawah: Btn_Upgrade (Upgrade) — Kuning 3D (420×64 px, sama besar dengan Mainkan)
+- **Interaksi Hover & Click:** Setiap tombol memiliki 3 state animasi (Normal, Hover, Pressed). Kursor di atas tombol otomatis berganti state Hover, dan saat klik mouse kiri ditekan otomatis berganti state Pressed (efek tombol tertekan 3D).
+- **Tipografi:** Teks tombol menggunakan font cr.ttf warna putih murni tanpa stroke.
+- **Git:** Perubahan di-commit dan di-push ke branch Danans-Version di remote origin.
