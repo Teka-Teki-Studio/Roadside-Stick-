@@ -1,0 +1,1724 @@
+{
+  "firstLayout": "Boot",
+  "gdVersion": {
+    "build": 287,
+    "major": 5,
+    "minor": 6,
+    "revision": 0
+  },
+  "properties": {
+    "adaptGameResolutionAtRuntime": true,
+    "antialiasingMode": "none",
+    "antialisingEnabledOnMobile": false,
+    "folderProject": false,
+    "orientation": "landscape",
+    "packageName": "com.roadsidestick.game",
+    "pixelsRounding": true,
+    "projectUuid": "cbff5337-8357-4910-a304-df1a8150910f",
+    "scaleMode": "nearest",
+    "sizeOnStartupMode": "",
+    "templateSlug": "",
+    "version": "0.1.0",
+    "name": "Roadside Stick",
+    "description": "Roadside Stick - A retro pixel art journey home",
+    "author": "Antigravity Senior Engineer",
+    "windowWidth": 1024,
+    "windowHeight": 576,
+    "latestCompilationDirectory": "",
+    "maxFPS": 60,
+    "minFPS": 20,
+    "verticalSync": false,
+    "loadingScreen": {
+      "backgroundColor": 0,
+      "backgroundFadeInDuration": 0.2,
+      "backgroundImageResourceName": "",
+      "gdevelopLogoStyle": "light",
+      "logoAndProgressFadeInDuration": 0.2,
+      "logoAndProgressLogoFadeInDelay": 0,
+      "minDuration": 0.5,
+      "progressBarColor": 16777215,
+      "progressBarHeight": 20,
+      "progressBarMaxWidth": 200,
+      "progressBarMinWidth": 40,
+      "progressBarWidthPercent": 30,
+      "showGDevelopSplash": false,
+      "showProgressBar": false
+    },
+    "watermark": {
+      "placement": "bottom-left",
+      "showWatermark": false
+    },
+    "authorIds": [],
+    "authorUsernames": [],
+    "categories": [
+      "Pixel Art",
+      "Adventure",
+      "Indie"
+    ],
+    "playableDevices": [
+      "keyboard",
+      "mouse"
+    ],
+    "extensionProperties": [],
+    "platforms": [
+      {
+        "name": "GDevelop JS platform"
+      }
+    ],
+    "currentPlatform": "GDevelop JS platform"
+  },
+  "variables": [
+    {
+      "name": "Save",
+      "type": "structure",
+      "children": [
+        {
+          "name": "version",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "name": "level",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "name": "money",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "soundOn",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "name": "bagTier",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "drinkQty",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "equipped",
+          "type": "structure",
+          "children": [
+            {
+              "name": "shirt",
+              "type": "string",
+              "value": "shirt_00"
+            },
+            {
+              "name": "pants",
+              "type": "string",
+              "value": "pants_00"
+            }
+          ]
+        },
+        {
+          "name": "ownedShirts",
+          "type": "structure",
+          "children": [
+            {
+              "name": "shirt_00",
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "name": "ownedPants",
+          "type": "structure",
+          "children": [
+            {
+              "name": "pants_00",
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "name": "sticks",
+          "type": "structure",
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Config",
+      "type": "structure",
+      "children": [
+        {
+          "name": "walkSpeed",
+          "type": "number",
+          "value": 160
+        },
+        {
+          "name": "boostMultiplier",
+          "type": "number",
+          "value": 1.6
+        },
+        {
+          "name": "boostDuration",
+          "type": "number",
+          "value": 10
+        },
+        {
+          "name": "levelBaseLength",
+          "type": "number",
+          "value": 9600
+        },
+        {
+          "name": "levelLengthPerLevel",
+          "type": "number",
+          "value": 1600
+        },
+        {
+          "name": "levelMaxLength",
+          "type": "number",
+          "value": 30000
+        },
+        {
+          "name": "spawnBase",
+          "type": "number",
+          "value": 8
+        },
+        {
+          "name": "spawnPerLevel",
+          "type": "number",
+          "value": 2
+        },
+        {
+          "name": "spawnMax",
+          "type": "number",
+          "value": 30
+        },
+        {
+          "name": "spawnMinGap",
+          "type": "number",
+          "value": 300
+        },
+        {
+          "name": "rarityWeights",
+          "type": "structure",
+          "children": [
+            {
+              "name": "common",
+              "type": "number",
+              "value": 70
+            },
+            {
+              "name": "uncommon",
+              "type": "number",
+              "value": 20
+            },
+            {
+              "name": "rare",
+              "type": "number",
+              "value": 8
+            },
+            {
+              "name": "veryRare",
+              "type": "number",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "name": "difficultyMultipliers",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 3.0
+            },
+            {
+              "type": "number",
+              "value": 2.2
+            },
+            {
+              "type": "number",
+              "value": 1.7
+            },
+            {
+              "type": "number",
+              "value": 1.35
+            },
+            {
+              "type": "number",
+              "value": 1.15
+            }
+          ]
+        },
+        {
+          "name": "rewardBase",
+          "type": "number",
+          "value": 100
+        },
+        {
+          "name": "rewardPerLevel",
+          "type": "number",
+          "value": 20
+        },
+        {
+          "name": "timeBonusPerSecond",
+          "type": "number",
+          "value": 2
+        },
+        {
+          "name": "parallax",
+          "type": "structure",
+          "children": [
+            {
+              "name": "sky",
+              "type": "number",
+              "value": 0.1
+            },
+            {
+              "name": "mountain",
+              "type": "number",
+              "value": 0.22
+            },
+            {
+              "name": "treeline",
+              "type": "number",
+              "value": 0.35
+            },
+            {
+              "name": "village",
+              "type": "number",
+              "value": 0.5
+            },
+            {
+              "name": "road",
+              "type": "number",
+              "value": 0.75
+            },
+            {
+              "name": "terrain",
+              "type": "number",
+              "value": 1.0
+            },
+            {
+              "name": "foreground",
+              "type": "number",
+              "value": 1.15
+            }
+          ]
+        },
+        {
+          "name": "groundY",
+          "type": "number",
+          "value": 448
+        },
+        {
+          "name": "pickupRange",
+          "type": "number",
+          "value": 40
+        },
+        {
+          "name": "devMode",
+          "type": "number",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "Data",
+      "type": "structure",
+      "children": [
+        {
+          "name": "sticks",
+          "type": "array",
+          "children": [
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "value": "stick_001"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Stick 001"
+                },
+                {
+                  "name": "rarity",
+                  "type": "string",
+                  "value": "Common"
+                }
+              ]
+            },
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "value": "stick_002"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Stick 002"
+                },
+                {
+                  "name": "rarity",
+                  "type": "string",
+                  "value": "Common"
+                }
+              ]
+            },
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "value": "stick_003"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Stick 003"
+                },
+                {
+                  "name": "rarity",
+                  "type": "string",
+                  "value": "Common"
+                }
+              ]
+            },
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "value": "stick_004"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Stick 004"
+                },
+                {
+                  "name": "rarity",
+                  "type": "string",
+                  "value": "Common"
+                }
+              ]
+            },
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "value": "stick_005"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Stick 005"
+                },
+                {
+                  "name": "rarity",
+                  "type": "string",
+                  "value": "Common"
+                }
+              ]
+            },
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "value": "stick_006"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Stick 006"
+                },
+                {
+                  "name": "rarity",
+                  "type": "string",
+                  "value": "Uncommon"
+                }
+              ]
+            },
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "value": "stick_007"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Stick 007"
+                },
+                {
+                  "name": "rarity",
+                  "type": "string",
+                  "value": "Uncommon"
+                }
+              ]
+            },
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "value": "stick_008"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Stick 008"
+                },
+                {
+                  "name": "rarity",
+                  "type": "string",
+                  "value": "Uncommon"
+                }
+              ]
+            },
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "value": "stick_009"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Stick 009"
+                },
+                {
+                  "name": "rarity",
+                  "type": "string",
+                  "value": "Uncommon"
+                }
+              ]
+            },
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "value": "stick_010"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Stick 010"
+                },
+                {
+                  "name": "rarity",
+                  "type": "string",
+                  "value": "Rare"
+                }
+              ]
+            },
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "value": "stick_011"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Stick 011"
+                },
+                {
+                  "name": "rarity",
+                  "type": "string",
+                  "value": "Rare"
+                }
+              ]
+            },
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "value": "stick_012"
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Stick 012"
+                },
+                {
+                  "name": "rarity",
+                  "type": "string",
+                  "value": "Very Rare"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "shop",
+          "type": "structure",
+          "children": [
+            {
+              "name": "shirts",
+              "type": "array",
+              "children": [
+                {
+                  "type": "structure",
+                  "children": [
+                    {
+                      "name": "id",
+                      "type": "string",
+                      "value": "shirt_00"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "value": "School Shirt"
+                    },
+                    {
+                      "name": "price",
+                      "type": "number",
+                      "value": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "structure",
+                  "children": [
+                    {
+                      "name": "id",
+                      "type": "string",
+                      "value": "shirt_01"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "value": "Casual Shirt"
+                    },
+                    {
+                      "name": "price",
+                      "type": "number",
+                      "value": 150
+                    }
+                  ]
+                },
+                {
+                  "type": "structure",
+                  "children": [
+                    {
+                      "name": "id",
+                      "type": "string",
+                      "value": "shirt_02"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "value": "Sport Shirt"
+                    },
+                    {
+                      "name": "price",
+                      "type": "number",
+                      "value": 250
+                    }
+                  ]
+                },
+                {
+                  "type": "structure",
+                  "children": [
+                    {
+                      "name": "id",
+                      "type": "string",
+                      "value": "shirt_03"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "value": "Cool Shirt"
+                    },
+                    {
+                      "name": "price",
+                      "type": "number",
+                      "value": 400
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "pants",
+              "type": "array",
+              "children": [
+                {
+                  "type": "structure",
+                  "children": [
+                    {
+                      "name": "id",
+                      "type": "string",
+                      "value": "pants_00"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "value": "School Pants"
+                    },
+                    {
+                      "name": "price",
+                      "type": "number",
+                      "value": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "structure",
+                  "children": [
+                    {
+                      "name": "id",
+                      "type": "string",
+                      "value": "pants_01"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "value": "School Shorts"
+                    },
+                    {
+                      "name": "price",
+                      "type": "number",
+                      "value": 120
+                    }
+                  ]
+                },
+                {
+                  "type": "structure",
+                  "children": [
+                    {
+                      "name": "id",
+                      "type": "string",
+                      "value": "pants_02"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "value": "Jeans"
+                    },
+                    {
+                      "name": "price",
+                      "type": "number",
+                      "value": 200
+                    }
+                  ]
+                },
+                {
+                  "type": "structure",
+                  "children": [
+                    {
+                      "name": "id",
+                      "type": "string",
+                      "value": "pants_03"
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "value": "Track Pants"
+                    },
+                    {
+                      "name": "price",
+                      "type": "number",
+                      "value": 350
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "difficulty",
+          "type": "array",
+          "children": [
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "index",
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Peaceful"
+                },
+                {
+                  "name": "description",
+                  "type": "string",
+                  "value": "Waktu sangat longgar"
+                },
+                {
+                  "name": "timeMultiplier",
+                  "type": "number",
+                  "value": 3.0
+                }
+              ]
+            },
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "index",
+                  "type": "number",
+                  "value": 1
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Easy"
+                },
+                {
+                  "name": "description",
+                  "type": "string",
+                  "value": "Waktu cukup longgar"
+                },
+                {
+                  "name": "timeMultiplier",
+                  "type": "number",
+                  "value": 2.2
+                }
+              ]
+            },
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "index",
+                  "type": "number",
+                  "value": 2
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Normal"
+                },
+                {
+                  "name": "description",
+                  "type": "string",
+                  "value": "Tantangan seimbang"
+                },
+                {
+                  "name": "timeMultiplier",
+                  "type": "number",
+                  "value": 1.7
+                }
+              ]
+            },
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "index",
+                  "type": "number",
+                  "value": 3
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Hard"
+                },
+                {
+                  "name": "description",
+                  "type": "string",
+                  "value": "Waktu lebih terbatas"
+                },
+                {
+                  "name": "timeMultiplier",
+                  "type": "number",
+                  "value": 1.35
+                }
+              ]
+            },
+            {
+              "type": "structure",
+              "children": [
+                {
+                  "name": "index",
+                  "type": "number",
+                  "value": 4
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "value": "Super Hard"
+                },
+                {
+                  "name": "description",
+                  "type": "string",
+                  "value": "Waktu sangat terbatas"
+                },
+                {
+                  "name": "timeMultiplier",
+                  "type": "number",
+                  "value": 1.15
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Run",
+      "type": "structure",
+      "children": [
+        {
+          "name": "difficulty",
+          "type": "number",
+          "value": 2
+        },
+        {
+          "name": "level",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "name": "carried",
+          "type": "array",
+          "children": []
+        },
+        {
+          "name": "timeLimit",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "lastResult",
+          "type": "structure",
+          "children": []
+        },
+        {
+          "name": "lostCount",
+          "type": "number",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "layouts": [
+    {
+      "b": 255,
+      "r": 255,
+      "v": 255,
+      "behaviorsSharedData": [],
+      "disableInputWhenNotFocused": false,
+      "events": [
+        {
+          "colorB": 240,
+          "colorG": 240,
+          "colorR": 240,
+          "comment": "STUB \u2014 diisi pada Tahap 1 (Boot)",
+          "comment2": "",
+          "type": "BuiltinCommonInstructions::Comment"
+        }
+      ],
+      "instances": [],
+      "layers": [
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "UI",
+          "renderingType": "",
+          "visibility": true
+        }
+      ],
+      "mangledName": "Boot",
+      "name": "Boot",
+      "objects": [],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT"
+      },
+      "renderer3DWorldScale": 1,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "Boot",
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 1
+      },
+      "variables": []
+    },
+    {
+      "b": 0,
+      "r": 0,
+      "v": 0,
+      "behaviorsSharedData": [],
+      "disableInputWhenNotFocused": false,
+      "events": [
+        {
+          "colorB": 240,
+          "colorG": 240,
+          "colorR": 240,
+          "comment": "STUB \u2014 diisi pada Tahap 2 (Loading)",
+          "comment2": "",
+          "type": "BuiltinCommonInstructions::Comment"
+        }
+      ],
+      "instances": [],
+      "layers": [
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "UI",
+          "renderingType": "",
+          "visibility": true
+        }
+      ],
+      "mangledName": "Loading",
+      "name": "Loading",
+      "objects": [],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT"
+      },
+      "renderer3DWorldScale": 1,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "Loading",
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 1
+      },
+      "variables": []
+    },
+    {
+      "b": 0,
+      "r": 0,
+      "v": 0,
+      "behaviorsSharedData": [],
+      "disableInputWhenNotFocused": false,
+      "events": [
+        {
+          "colorB": 240,
+          "colorG": 240,
+          "colorR": 240,
+          "comment": "STUB \u2014 diisi pada Tahap 3 (Lobby)",
+          "comment2": "",
+          "type": "BuiltinCommonInstructions::Comment"
+        }
+      ],
+      "instances": [],
+      "layers": [
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "UI",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "Modals",
+          "renderingType": "",
+          "visibility": true
+        }
+      ],
+      "mangledName": "Lobby",
+      "name": "Lobby",
+      "objects": [],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT"
+      },
+      "renderer3DWorldScale": 1,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "Lobby",
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 1
+      },
+      "variables": []
+    },
+    {
+      "b": 0,
+      "r": 0,
+      "v": 0,
+      "behaviorsSharedData": [],
+      "disableInputWhenNotFocused": false,
+      "events": [
+        {
+          "colorB": 240,
+          "colorG": 240,
+          "colorR": 240,
+          "comment": "STUB \u2014 diisi pada Tahap 9 (Gameplay)",
+          "comment2": "",
+          "type": "BuiltinCommonInstructions::Comment"
+        }
+      ],
+      "instances": [],
+      "layers": [
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "BG_Sky",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "BG_Mountain",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "BG_Treeline",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "BG_Village",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "BG_Road",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "World",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "Foreground",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "HUD",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "Modals",
+          "renderingType": "",
+          "visibility": true
+        }
+      ],
+      "mangledName": "Gameplay",
+      "name": "Gameplay",
+      "objects": [],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT"
+      },
+      "renderer3DWorldScale": 1,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "Gameplay",
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 1
+      },
+      "variables": []
+    },
+    {
+      "b": 0,
+      "r": 0,
+      "v": 0,
+      "behaviorsSharedData": [],
+      "disableInputWhenNotFocused": false,
+      "events": [
+        {
+          "colorB": 240,
+          "colorG": 240,
+          "colorR": 240,
+          "comment": "STUB \u2014 diisi pada Tahap 13 (Success)",
+          "comment2": "",
+          "type": "BuiltinCommonInstructions::Comment"
+        }
+      ],
+      "instances": [],
+      "layers": [
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "UI",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "Modals",
+          "renderingType": "",
+          "visibility": true
+        }
+      ],
+      "mangledName": "Success",
+      "name": "Success",
+      "objects": [],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT"
+      },
+      "renderer3DWorldScale": 1,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "Success",
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 1
+      },
+      "variables": []
+    },
+    {
+      "b": 0,
+      "r": 0,
+      "v": 0,
+      "behaviorsSharedData": [],
+      "disableInputWhenNotFocused": false,
+      "events": [
+        {
+          "colorB": 240,
+          "colorG": 240,
+          "colorR": 240,
+          "comment": "STUB \u2014 diisi pada Tahap 14 (FailureCutscene)",
+          "comment2": "",
+          "type": "BuiltinCommonInstructions::Comment"
+        }
+      ],
+      "instances": [],
+      "layers": [
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "World",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "UI",
+          "renderingType": "",
+          "visibility": true
+        }
+      ],
+      "mangledName": "FailureCutscene",
+      "name": "FailureCutscene",
+      "objects": [],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT"
+      },
+      "renderer3DWorldScale": 1,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "FailureCutscene",
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 1
+      },
+      "variables": []
+    },
+    {
+      "b": 0,
+      "r": 0,
+      "v": 0,
+      "behaviorsSharedData": [],
+      "disableInputWhenNotFocused": false,
+      "events": [
+        {
+          "colorB": 240,
+          "colorG": 240,
+          "colorR": 240,
+          "comment": "STUB \u2014 diisi pada Tahap 14 (GameOver)",
+          "comment2": "",
+          "type": "BuiltinCommonInstructions::Comment"
+        }
+      ],
+      "instances": [],
+      "layers": [
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "UI",
+          "renderingType": "",
+          "visibility": true
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera3DFairDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearDistance": 1,
+          "cameraType": "",
+          "effects": [],
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "Modals",
+          "renderingType": "",
+          "visibility": true
+        }
+      ],
+      "mangledName": "GameOver",
+      "name": "GameOver",
+      "objects": [],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT"
+      },
+      "renderer3DWorldScale": 1,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "GameOver",
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 1
+      },
+      "variables": []
+    }
+  ],
+  "layoutsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "objects": [],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "objectsGroups": [],
+  "externalEvents": [],
+  "externalEventsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "externalLayouts": [],
+  "externalLayoutsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "eventsFunctionsExtensions": [],
+  "resources": {
+    "resources": [
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/BOOT/LOGO/boot_logo_dev.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "boot_logo_dev.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/BOOT/LOADING/boot_loading_bg_dummy.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "boot_loading_bg_dummy.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/BOOT/LOADING/boot_loading_bar_fill.png.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "boot_loading_bar_fill.png.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/BOOT/LOADING/boot_loading_bar_frame.png.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "boot_loading_bar_frame.png.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/BOOT/LOADING/boot_loading_indicator.png.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "boot_loading_indicator.png.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/robi_sd.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_sd.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/LOBBY/bg_lobby.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "bg_lobby.png",
+        "smoothed": false,
+        "userAdded": true
+      }
+    ],
+    "resourceFolders": []
+  }
+}
