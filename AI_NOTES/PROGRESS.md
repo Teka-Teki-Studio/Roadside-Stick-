@@ -11,12 +11,12 @@
   - Durasi loading diperpanjang menjadi 4.0 detik agar transisi mulus dan dapat dinikmati.
 - [x] **Tahap 3 — Lobby (Interactive Mockup & Living VFX)**: Selesai. Robi portrait idle 10-frame (128x128 loop), 4 tombol 3D pixel-art responsif (Hover & Pressed), VFX breathing & pulsing, BGM loading & menu terintegrasi.
 - [ ] **Tahap 4 — Settings & About**: Belum dimulai.
-- [ ] **Tahap 5 — Difficulty**: Belum dimulai.
+- [x] **Tahap 5 — Difficulty**: Selesai (Mockup Fungsional). 5 level (Peaceful, Easy, Normal, Hard, Super Hard), deskripsi dinamis, tombol Confirm menuju Gameplay, Back kembali ke Lobby.
 - [ ] **Tahap 6 — Stick Index**: Belum dimulai.
 - [ ] **Tahap 7 — Shop**: Belum dimulai.
 - [ ] **Tahap 8 — Upgrade**: Belum dimulai.
-- [ ] **Tahap 9 — Gameplay: Environment**: Belum dimulai.
-- [ ] **Tahap 10 — Karakter & Kostum**: Belum dimulai.
+- [x] **Tahap 9 — Gameplay: Environment**: Selesai (Versi Dasar). Layer BG_Sky (Langit_Pagi), BG_Village (Rumah dan Pohon), deretan terrain Rumput1..3 berselang-seling di Y=448, kamera mengikuti pemain.
+- [x] **Tahap 10 — Karakter & Kostum**: Selesai (Versi Dasar). Robi gameplay memiliki 10 frame Idle dan 10 frame Walk dari robi_sd.png, kontrol A/D, flip horizontal otomatis, batas kiri start.
 - [ ] **Tahap 11 — Stick (Koleksi)**: Belum dimulai.
 - [ ] **Tahap 12 — HUD, Inventory, Swap, Pause**: Belum dimulai.
 - [ ] **Tahap 13 — Success & Result**: Belum dimulai.
@@ -33,6 +33,19 @@
 - **Spinner / Indicator:** Dipindahkan ke sisi kanan loading bar (X: 968, Y: 514, W: 24, H: 24) sejajar vertikal dengan bar di dalam layar 1024x576.
 - **Tipografi:** Menggunakan font cr.ttf, warna putih murni 255;255;255, outline nonaktif (isOutlineEnabled: false).
 - **Validasi:** Kompilasi libGD 5.6.287 sukses untuk seluruh 7 scene dengan 0 error/diagnostics.
+
+### Update 2026-11-23 14:00 — Tahap 5 & Tahap 9-10: Modal Difficulty & Gameplay Playable Dasar
+- **Modal Difficulty (Tahap 5):**
+  - Klik tombol `Btn_Play` di Lobby membuka layer `Modals` dengan dim background.
+  - 5 tingkat kesulitan dengan selector panah `<` dan `>`: Peaceful (3.0x), Easy (2.2x), Normal (1.7x), Hard (1.35x), Super Hard (1.15x).
+  - Tombol Confirm menyimpan `Run.difficulty` dan beralih ke scene `Gameplay` via `PushScene`.
+  - Tombol Back menutup modal kembali ke Lobby.
+- **Scene Gameplay (Tahap 9 & 10):**
+  - **Environment:** Layer `BG_Sky` dengan `Langit_Pagi.png`, layer `BG_Village` dengan `Rumah dan Pohon.png` di Y=192, dan deretan 16 tile terrain `Rumput1..3.png` berselang-seling di garis tanah Y=448 membentang sepanjang lintasan jalan.
+  - **Karakter Robi:** Memotong 10 frame berjalan Robi (`robi_walk_00..09.png`) dari row 2 `robi_sd.png`. Player memiliki animasi Idle dan Walk.
+  - **Kontrol:** Input keyboard <kbd>A</kbd>/<kbd>D</kbd> atau panah kiri/kanan menggerakkan Robi dengan kecepatan 160 px/detik, auto flip horizontal, dan transisi ke Idle saat tombol dilepas. Batas start kiri dibatasi di X=50.
+  - **Kamera & HUD:** Kamera horizontal dinamis berpusat mengikuti posisi Robi. HUD menampilkan countdown timer dan panduan kontrol. Tombol <kbd>Esc</kbd> kembali ke Lobby.
+- **Validasi:** Kompilasi libGD 5.6.287 sukses untuk seluruh 7 scene dengan 0 diagnostics.
 
 ### Update 2026-11-23 13:42 — Penggantian Loading BG ke Tes64.png
 - **Loading Background Baru:** Mengganti background `Spr_LoadingBg` menjadi `Tes64.png` (114×64 RGBA). Visual menampilkan ilustrasi naratif pixel-art Robi berlari membawa ranting kayu dikejar motor orang tua.

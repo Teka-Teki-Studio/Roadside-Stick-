@@ -2614,6 +2614,514 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Group",
+          "title": "[T5] Lobby — Modal Difficulty",
+          "parameters": [
+            ""
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DepartScene"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "HideLayer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Modals\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeOpacity"
+                  },
+                  "parameters": [
+                    "Pnl_ModalDim",
+                    "=",
+                    "200"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "Btn_Play",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "ModalOpen",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "ModalOpen",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ShowLayer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Modals\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "Btn_DiffBack",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "ModalOpen",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "ModalOpen",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "HideLayer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Modals\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "Btn_DiffPrev",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "ModalOpen",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "SelectedDiff",
+                    ">",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "SelectedDiff",
+                    "-",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "Btn_DiffNext",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "ModalOpen",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "SelectedDiff",
+                    "<",
+                    "4"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "SelectedDiff",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "SelectedDiff",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeText"
+                  },
+                  "parameters": [
+                    "Txt_DiffCurrent",
+                    "=",
+                    "\"PEACEFUL\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeText"
+                  },
+                  "parameters": [
+                    "Txt_DiffDesc",
+                    "=",
+                    "\"Waktu 3.0x | Santai tanpa tekanan\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "SelectedDiff",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeText"
+                  },
+                  "parameters": [
+                    "Txt_DiffCurrent",
+                    "=",
+                    "\"EASY\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeText"
+                  },
+                  "parameters": [
+                    "Txt_DiffDesc",
+                    "=",
+                    "\"Waktu 2.2x | Cukup longgar\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "SelectedDiff",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeText"
+                  },
+                  "parameters": [
+                    "Txt_DiffCurrent",
+                    "=",
+                    "\"NORMAL\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeText"
+                  },
+                  "parameters": [
+                    "Txt_DiffDesc",
+                    "=",
+                    "\"Waktu 1.7x | Tantangan seimbang\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "SelectedDiff",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeText"
+                  },
+                  "parameters": [
+                    "Txt_DiffCurrent",
+                    "=",
+                    "\"HARD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeText"
+                  },
+                  "parameters": [
+                    "Txt_DiffDesc",
+                    "=",
+                    "\"Waktu 1.35x | Waktu lebih ketat\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "SelectedDiff",
+                    "=",
+                    "4"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeText"
+                  },
+                  "parameters": [
+                    "Txt_DiffCurrent",
+                    "=",
+                    "\"SUPER HARD\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeText"
+                  },
+                  "parameters": [
+                    "Txt_DiffDesc",
+                    "=",
+                    "\"Waktu 1.15x | Sangat terbatas!\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "Btn_DiffConfirm",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "ModalOpen",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "Run.difficulty",
+                    "=",
+                    "Variable(SelectedDiff)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PushScene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Gameplay\""
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "instances": [
@@ -2758,6 +3266,162 @@
           "customSize": false,
           "layer": "UI",
           "zOrder": 10,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Pnl_ModalDim",
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 576,
+          "customSize": true,
+          "layer": "Modals",
+          "zOrder": 1,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Pnl_DifficultyCard",
+          "x": 232,
+          "y": 108,
+          "width": 560,
+          "height": 360,
+          "customSize": true,
+          "layer": "Modals",
+          "zOrder": 2,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_DiffTitle",
+          "x": 360,
+          "y": 136,
+          "width": 100,
+          "height": 30,
+          "customSize": false,
+          "layer": "Modals",
+          "zOrder": 3,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Btn_DiffPrev",
+          "x": 310,
+          "y": 210,
+          "width": 64,
+          "height": 56,
+          "customSize": true,
+          "layer": "Modals",
+          "zOrder": 3,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_BtnLeft",
+          "x": 332,
+          "y": 218,
+          "width": 100,
+          "height": 30,
+          "customSize": false,
+          "layer": "Modals",
+          "zOrder": 4,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_DiffCurrent",
+          "x": 450,
+          "y": 218,
+          "width": 100,
+          "height": 30,
+          "customSize": false,
+          "layer": "Modals",
+          "zOrder": 3,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Btn_DiffNext",
+          "x": 650,
+          "y": 210,
+          "width": 64,
+          "height": 56,
+          "customSize": true,
+          "layer": "Modals",
+          "zOrder": 3,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_BtnRight",
+          "x": 672,
+          "y": 218,
+          "width": 100,
+          "height": 30,
+          "customSize": false,
+          "layer": "Modals",
+          "zOrder": 4,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_DiffDesc",
+          "x": 310,
+          "y": 286,
+          "width": 100,
+          "height": 30,
+          "customSize": false,
+          "layer": "Modals",
+          "zOrder": 3,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Btn_DiffConfirm",
+          "x": 524,
+          "y": 360,
+          "width": 240,
+          "height": 56,
+          "customSize": true,
+          "layer": "Modals",
+          "zOrder": 3,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_BtnConfirm",
+          "x": 554,
+          "y": 376,
+          "width": 100,
+          "height": 30,
+          "customSize": false,
+          "layer": "Modals",
+          "zOrder": 4,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Btn_DiffBack",
+          "x": 260,
+          "y": 360,
+          "width": 220,
+          "height": 56,
+          "customSize": true,
+          "layer": "Modals",
+          "zOrder": 3,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_BtnBack",
+          "x": 300,
+          "y": 378,
+          "width": 100,
+          "height": 30,
+          "customSize": false,
+          "layer": "Modals",
+          "zOrder": 4,
           "angle": 0,
           "locked": false
         }
@@ -3599,6 +4263,591 @@
           "shadowDistance": 0,
           "shadowColor": "0;0;0",
           "shadowOpacity": 0
+        },
+        {
+          "assetStoreId": "",
+          "name": "Pnl_ModalDim",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Normal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "DraftLoadingPXFix.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 640,
+                        "y": 360
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Pnl_DifficultyCard",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Normal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_upgrade_normal.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 210,
+                        "y": 32
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_DiffTitle",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "content": {
+            "bold": true,
+            "italic": false,
+            "underlined": false,
+            "characterSize": 36,
+            "color": "255;255;255",
+            "font": "vcr.ttf",
+            "text": "PILIH KESULITAN"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_DiffCurrent",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "content": {
+            "bold": true,
+            "italic": false,
+            "underlined": false,
+            "characterSize": 32,
+            "color": "255;255;255",
+            "font": "vcr.ttf",
+            "text": "NORMAL"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_DiffDesc",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "content": {
+            "bold": true,
+            "italic": false,
+            "underlined": false,
+            "characterSize": 18,
+            "color": "255;255;255",
+            "font": "vcr.ttf",
+            "text": "Waktu 1.7x | Tantangan Seimbang"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_BtnConfirm",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "content": {
+            "bold": true,
+            "italic": false,
+            "underlined": false,
+            "characterSize": 20,
+            "color": "255;255;255",
+            "font": "vcr.ttf",
+            "text": "MULAI (CONFIRM)"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_BtnBack",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "content": {
+            "bold": true,
+            "italic": false,
+            "underlined": false,
+            "characterSize": 18,
+            "color": "255;255;255",
+            "font": "vcr.ttf",
+            "text": "BATAL (BACK)"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_BtnLeft",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "content": {
+            "bold": true,
+            "italic": false,
+            "underlined": false,
+            "characterSize": 32,
+            "color": "255;255;255",
+            "font": "vcr.ttf",
+            "text": "<"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_BtnRight",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "content": {
+            "bold": true,
+            "italic": false,
+            "underlined": false,
+            "characterSize": 32,
+            "color": "255;255;255",
+            "font": "vcr.ttf",
+            "text": ">"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Btn_DiffConfirm",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Normal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_play_normal.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 32,
+                        "y": 16
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hover",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_play_hover.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 32,
+                        "y": 16
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Pressed",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_play_pressed.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 32,
+                        "y": 16
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Btn_DiffBack",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Normal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_index_normal.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 32,
+                        "y": 16
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hover",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_index_hover.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 32,
+                        "y": 16
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Pressed",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_index_pressed.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 32,
+                        "y": 16
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Btn_DiffPrev",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Normal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_shop_normal.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 32,
+                        "y": 16
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hover",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_shop_hover.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 32,
+                        "y": 16
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Pressed",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_shop_pressed.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 32,
+                        "y": 16
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Btn_DiffNext",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Normal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_shop_normal.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 32,
+                        "y": 16
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hover",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_shop_hover.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 32,
+                        "y": 16
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Pressed",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "btn_shop_pressed.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 32,
+                        "y": 16
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -3619,7 +4868,16 @@
         "snap": false,
         "zoomFactor": 1
       },
-      "variables": [],
+      "variables": [
+        {
+          "name": "ModalOpen",
+          "value": 0
+        },
+        {
+          "name": "SelectedDiff",
+          "value": 2
+        }
+      ],
       "objectsGroups": [
         {
           "name": "Grp_Buttons",
@@ -3648,180 +4906,1399 @@
       "disableInputWhenNotFocused": false,
       "events": [
         {
-          "colorB": 240,
-          "colorG": 240,
-          "colorR": 240,
-          "comment": "STUB — diisi pada Tahap 9 (Gameplay)",
-          "comment2": "",
-          "type": "BuiltinCommonInstructions::Comment"
+          "type": "BuiltinCommonInstructions::Group",
+          "title": "[T9] Gameplay — Inisialisasi & Timer",
+          "parameters": [
+            ""
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DepartScene"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "TimeRemaining",
+                    "=",
+                    "75"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StopMusicChannel"
+                  },
+                  "parameters": [
+                    "",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "TimeRemaining",
+                    ">",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "TimeRemaining",
+                    "-",
+                    "TimeDelta()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeText"
+                  },
+                  "parameters": [
+                    "Txt_HUDTimer",
+                    "=",
+                    "\"SISA WAKTU: \" + ToString(ceil(Variable(TimeRemaining))) + \"s\""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Group",
+          "title": "[T10] Gameplay — Kontrol Pergerakan Robi",
+          "parameters": [
+            ""
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "IsMoving",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "d"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetX"
+                  },
+                  "parameters": [
+                    "Spr_Player",
+                    "+",
+                    "160 * TimeDelta()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAnimationName"
+                  },
+                  "parameters": [
+                    "Spr_Player",
+                    "\"Walk\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlipX"
+                  },
+                  "parameters": [
+                    "Spr_Player",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "IsMoving",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "a"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetX"
+                  },
+                  "parameters": [
+                    "Spr_Player",
+                    "-",
+                    "160 * TimeDelta()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAnimationName"
+                  },
+                  "parameters": [
+                    "Spr_Player",
+                    "\"Walk\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlipX"
+                  },
+                  "parameters": [
+                    "Spr_Player",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "IsMoving",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "IsMoving",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetAnimationName"
+                  },
+                  "parameters": [
+                    "Spr_Player",
+                    "\"Idle\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "XPosition"
+                  },
+                  "parameters": [
+                    "Spr_Player",
+                    "<",
+                    "50"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetX"
+                  },
+                  "parameters": [
+                    "Spr_Player",
+                    "=",
+                    "50"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Group",
+          "title": "[T9] Gameplay — Kamera & Parallax",
+          "parameters": [
+            ""
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetCameraX"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "max(512, Spr_Player.X() + 64)",
+                    "\"\"",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCameraX"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "512 + (max(512, Spr_Player.X() + 64) - 512) * 0.5",
+                    "\"BG_Village\"",
+                    "0"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Group",
+          "title": "[T12] Gameplay — Pause / Menu",
+          "parameters": [
+            ""
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Escape"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PushScene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Lobby\""
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
-      "instances": [],
+      "instances": [
+        {
+          "name": "Spr_Sky",
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 300,
+          "customSize": true,
+          "layer": "BG_Sky",
+          "zOrder": 1,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Spr_Sky",
+          "x": 1024,
+          "y": 0,
+          "width": 1024,
+          "height": 300,
+          "customSize": true,
+          "layer": "BG_Sky",
+          "zOrder": 1,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Spr_Sky",
+          "x": 2048,
+          "y": 0,
+          "width": 1024,
+          "height": 300,
+          "customSize": true,
+          "layer": "BG_Sky",
+          "zOrder": 1,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Spr_Sky",
+          "x": 3072,
+          "y": 0,
+          "width": 1024,
+          "height": 300,
+          "customSize": true,
+          "layer": "BG_Sky",
+          "zOrder": 1,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Spr_Village",
+          "x": 0,
+          "y": 192,
+          "width": 1536,
+          "height": 256,
+          "customSize": true,
+          "layer": "BG_Village",
+          "zOrder": 2,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Spr_Village",
+          "x": 1536,
+          "y": 192,
+          "width": 1536,
+          "height": 256,
+          "customSize": true,
+          "layer": "BG_Village",
+          "zOrder": 2,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Spr_Village",
+          "x": 3072,
+          "y": 192,
+          "width": 1536,
+          "height": 256,
+          "customSize": true,
+          "layer": "BG_Village",
+          "zOrder": 2,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 0,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 0
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 256,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 1
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 512,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 2
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 768,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 0
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 1024,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 1
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 1280,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 2
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 1536,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 0
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 1792,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 1
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 2048,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 2
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 2304,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 0
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 2560,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 1
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 2816,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 2
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 3072,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 0
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 3328,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 1
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 3584,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 2
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 3840,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 0
+        },
+        {
+          "name": "Spr_Player",
+          "x": 150,
+          "y": 368,
+          "width": 128,
+          "height": 128,
+          "customSize": false,
+          "layer": "",
+          "zOrder": 10,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_HUDLevel",
+          "x": 32,
+          "y": 24,
+          "width": 300,
+          "height": 30,
+          "customSize": false,
+          "layer": "HUD",
+          "zOrder": 1,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_HUDTimer",
+          "x": 740,
+          "y": 24,
+          "width": 250,
+          "height": 30,
+          "customSize": false,
+          "layer": "HUD",
+          "zOrder": 1,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Txt_HUDControls",
+          "x": 32,
+          "y": 64,
+          "width": 400,
+          "height": 24,
+          "customSize": false,
+          "layer": "HUD",
+          "zOrder": 1,
+          "angle": 0,
+          "locked": false
+        }
+      ],
       "layers": [
         {
           "ambientLightColorB": 0,
           "ambientLightColorG": 0,
           "ambientLightColorR": 0,
-          "camera3DFairDistance": 10000,
+          "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
-          "camera3DNearDistance": 1,
+          "camera3DNearPlaneDistance": 0.1,
           "cameraType": "",
           "effects": [],
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
-          "isLocked": false,
-          "name": "",
-          "renderingType": "",
-          "visibility": true
-        },
-        {
-          "ambientLightColorB": 0,
-          "ambientLightColorG": 0,
-          "ambientLightColorR": 0,
-          "camera3DFairDistance": 10000,
-          "camera3DFieldOfView": 45,
-          "camera3DNearDistance": 1,
-          "cameraType": "",
-          "effects": [],
-          "followBaseLayerCamera": false,
-          "isLightingLayer": false,
-          "isLocked": false,
           "name": "BG_Sky",
           "renderingType": "",
-          "visibility": true
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultAspectRatio": true,
+              "defaultSize": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ]
         },
         {
           "ambientLightColorB": 0,
           "ambientLightColorG": 0,
           "ambientLightColorR": 0,
-          "camera3DFairDistance": 10000,
+          "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
-          "camera3DNearDistance": 1,
+          "camera3DNearPlaneDistance": 0.1,
           "cameraType": "",
           "effects": [],
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
-          "isLocked": false,
-          "name": "BG_Mountain",
-          "renderingType": "",
-          "visibility": true
-        },
-        {
-          "ambientLightColorB": 0,
-          "ambientLightColorG": 0,
-          "ambientLightColorR": 0,
-          "camera3DFairDistance": 10000,
-          "camera3DFieldOfView": 45,
-          "camera3DNearDistance": 1,
-          "cameraType": "",
-          "effects": [],
-          "followBaseLayerCamera": false,
-          "isLightingLayer": false,
-          "isLocked": false,
-          "name": "BG_Treeline",
-          "renderingType": "",
-          "visibility": true
-        },
-        {
-          "ambientLightColorB": 0,
-          "ambientLightColorG": 0,
-          "ambientLightColorR": 0,
-          "camera3DFairDistance": 10000,
-          "camera3DFieldOfView": 45,
-          "camera3DNearDistance": 1,
-          "cameraType": "",
-          "effects": [],
-          "followBaseLayerCamera": false,
-          "isLightingLayer": false,
-          "isLocked": false,
           "name": "BG_Village",
           "renderingType": "",
-          "visibility": true
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultAspectRatio": true,
+              "defaultSize": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ]
         },
         {
           "ambientLightColorB": 0,
           "ambientLightColorG": 0,
           "ambientLightColorR": 0,
-          "camera3DFairDistance": 10000,
+          "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
-          "camera3DNearDistance": 1,
+          "camera3DNearPlaneDistance": 0.1,
           "cameraType": "",
           "effects": [],
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
-          "isLocked": false,
-          "name": "BG_Road",
+          "name": "",
           "renderingType": "",
-          "visibility": true
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultAspectRatio": true,
+              "defaultSize": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ]
         },
         {
           "ambientLightColorB": 0,
           "ambientLightColorG": 0,
           "ambientLightColorR": 0,
-          "camera3DFairDistance": 10000,
+          "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
-          "camera3DNearDistance": 1,
+          "camera3DNearPlaneDistance": 0.1,
           "cameraType": "",
           "effects": [],
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
-          "isLocked": false,
-          "name": "World",
-          "renderingType": "",
-          "visibility": true
-        },
-        {
-          "ambientLightColorB": 0,
-          "ambientLightColorG": 0,
-          "ambientLightColorR": 0,
-          "camera3DFairDistance": 10000,
-          "camera3DFieldOfView": 45,
-          "camera3DNearDistance": 1,
-          "cameraType": "",
-          "effects": [],
-          "followBaseLayerCamera": false,
-          "isLightingLayer": false,
-          "isLocked": false,
-          "name": "Foreground",
-          "renderingType": "",
-          "visibility": true
-        },
-        {
-          "ambientLightColorB": 0,
-          "ambientLightColorG": 0,
-          "ambientLightColorR": 0,
-          "camera3DFairDistance": 10000,
-          "camera3DFieldOfView": 45,
-          "camera3DNearDistance": 1,
-          "cameraType": "",
-          "effects": [],
-          "followBaseLayerCamera": false,
-          "isLightingLayer": false,
-          "isLocked": false,
           "name": "HUD",
           "renderingType": "",
-          "visibility": true
-        },
-        {
-          "ambientLightColorB": 0,
-          "ambientLightColorG": 0,
-          "ambientLightColorR": 0,
-          "camera3DFairDistance": 10000,
-          "camera3DFieldOfView": 45,
-          "camera3DNearDistance": 1,
-          "cameraType": "",
-          "effects": [],
-          "followBaseLayerCamera": false,
-          "isLightingLayer": false,
-          "isLocked": false,
-          "name": "Modals",
-          "renderingType": "",
-          "visibility": true
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultAspectRatio": true,
+              "defaultSize": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ]
         }
       ],
       "mangledName": "Gameplay",
       "name": "Gameplay",
-      "objects": [],
+      "objects": [
+        {
+          "assetStoreId": "",
+          "name": "Spr_Sky",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Normal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "Langit_Pagi.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 512,
+                        "y": 128
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Spr_Village",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Normal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "Rumah_dan_Pohon.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 768,
+                        "y": 128
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Spr_Terrain",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Rumput1",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "Rumput1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 128,
+                        "y": 64
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Rumput2",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "Rumput2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 128,
+                        "y": 64
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Rumput3",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "Rumput3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 128,
+                        "y": 64
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Spr_Player",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.12,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_00.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_01.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_02.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_03.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_04.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_05.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_06.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_07.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_08.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_09.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Walk",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_walk_00.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_walk_01.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_walk_02.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_walk_03.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_walk_04.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_walk_05.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_walk_06.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_walk_07.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_walk_08.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_walk_09.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_HUDTimer",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "content": {
+            "bold": true,
+            "italic": false,
+            "underlined": false,
+            "characterSize": 24,
+            "color": "255;255;255",
+            "font": "vcr.ttf",
+            "text": "SISA WAKTU: 60s"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_HUDControls",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "content": {
+            "bold": true,
+            "italic": false,
+            "underlined": false,
+            "characterSize": 16,
+            "color": "255;255;255",
+            "font": "vcr.ttf",
+            "text": "KONTROL: [A/D] Jalan | [ESC] Pause"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Txt_HUDLevel",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "content": {
+            "bold": true,
+            "italic": false,
+            "underlined": false,
+            "characterSize": 20,
+            "color": "255;255;255",
+            "font": "vcr.ttf",
+            "text": "PERJALANAN PULANG #1"
+          }
+        }
+      ],
       "objectsFolderStructure": {
         "folderName": "__ROOT"
       },
@@ -3840,7 +6317,16 @@
         "snap": false,
         "zoomFactor": 1
       },
-      "variables": []
+      "variables": [
+        {
+          "name": "TimeRemaining",
+          "value": 60
+        },
+        {
+          "name": "IsMoving",
+          "value": 0
+        }
+      ]
     },
     {
       "b": 0,
@@ -4533,6 +7019,141 @@
         "name": "Tes64.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/walk_frames/robi_walk_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_walk_00.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/walk_frames/robi_walk_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_walk_01.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/walk_frames/robi_walk_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_walk_02.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/walk_frames/robi_walk_03.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_walk_03.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/walk_frames/robi_walk_04.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_walk_04.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/walk_frames/robi_walk_05.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_walk_05.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/walk_frames/robi_walk_06.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_walk_06.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/walk_frames/robi_walk_07.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_walk_07.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/walk_frames/robi_walk_08.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_walk_08.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/walk_frames/robi_walk_09.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_walk_09.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/ENVIRONMENT/Rumput1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Rumput1.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/ENVIRONMENT/Rumput2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Rumput2.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/ENVIRONMENT/Rumput3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Rumput3.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/ENVIRONMENT/Rumah dan Pohon.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Rumah_dan_Pohon.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/ENVIRONMENT/SKY/Langit_Pagi.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Langit_Pagi.png",
+        "userAdded": true,
+        "smoothed": false
       }
     ],
     "resourceFolders": []

@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Project Version](https://img.shields.io/badge/Version-v0.4.2--alpha-yellow?style=for-the-badge&logo=git)
+![Project Version](https://img.shields.io/badge/Version-v0.5.0--alpha-yellow?style=for-the-badge&logo=git)
 ![Engine](https://img.shields.io/badge/Engine-GDevelop%205.6-blue?style=for-the-badge&logo=gdevelop)
 ![Platform](https://img.shields.io/badge/Platform-HTML5%20%7C%20itch.io-crimson?style=for-the-badge)
 ![Art Style](https://img.shields.io/badge/Style-16--bit%20Pixel%20Art-brightgreen?style=for-the-badge)
@@ -123,12 +123,12 @@ flowchart LR
   - [x] 4 Tombol 3D beranimasi (`Normal`, `Hover`, `Pressed`): Mainkan (Kuning), Toko (Kuning), Koleksi (Ungu), Upgrade (Kuning).
   - [x] Indikator HUD teks level & uang berbasis font `vcr.ttf`.
 - [ ] **Tahap 4 — Settings & About:** Modal pengaturan audio dan profil kreator.
-- [ ] **Tahap 5 — Difficulty Selection:** Slider 5 tingkat (Peaceful, Easy, Normal, Hard, Super Hard).
+- [x] **Tahap 5 — Difficulty Selection (Mockup Fungsional):** Modal pemilihan tingkat kesulitan (Peaceful, Easy, Normal, Hard, Super Hard) dengan navigasi panah `<` `>` dan tombol Mulai (*Confirm*) menuju scene Gameplay.
 - [ ] **Tahap 6 — Stick Index:** Katalog 12 jenis stick dengan status terkunci/terbuka.
 - [ ] **Tahap 7 — Shop (Toko Baju & Celana):** Kosmetik karakter Robi.
 - [ ] **Tahap 8 — Upgrade Tas & Minuman:** Penambahan slot tas (1 s.d. 4) dan stok Speed Drink.
-- [ ] **Tahap 9 — Environment & Parallax World:** 7-layer parallax (Sky, Mountain, Treeline, Village, Road, Terrain, Foreground) & rumah finis.
-- [ ] **Tahap 10 — Karakter & Animasi Gerak:** Sinkronisasi sprite baju/celana Robi (Walk, Run, Pickup, Swap).
+- [x] **Tahap 9 — Environment & Terrain Pijakan:** Susunan layer Gameplay (`BG_Sky`, `BG_Village`, `World`, `HUD`). Langit pagi `Langit_Pagi.png`, perumahan desa `Rumah dan Pohon.png`, dan deretan pijakan rumput `Rumput1..3.png` berjejer rapi di garis tanah Y=448 dengan kamera mengikuti horizontal.
+- [x] **Tahap 10 — Karakter & Animasi Gerak Robi:** Player di Gameplay memiliki animasi Idle 10-frame dan animasi Walk 10-frame (presisi dari `robi_sd.png`), kontrol responsif gerak kiri/kanan (<kbd>A</kbd>/<kbd>D</kbd>) dengan auto horizontal flip.
 - [ ] **Tahap 11 — Stick Spawner & Rarity:** Distribusi Common (70%), Uncommon (20%), Rare (8%), Very Rare (2%).
 - [ ] **Tahap 12 — Gameplay HUD, Swap Window, & Timer:** Indikator jarak pulang dan modal tukar stick.
 - [ ] **Tahap 13 — Success Scene:** Arrive Home, kalkulasi reward uang & penambahan stick ke Index.
@@ -168,12 +168,13 @@ flowchart LR
 | Tombol Upgrade | `ASSETS/UI/BUTTONS/btn_upgrade_*.png` (3 state) | 420×64 | ✅ Siap (3D Mockup) |
 | Font Utama | `ASSETS/UI/vcr.ttf` | TrueType | ✅ Siap |
 
-### 🌲 Lingkungan & Dunia (In-Progress)
+### 🌲 Lingkungan & Dunia (Gameplay)
 | Aset | File | Dimensi | Status |
 |---|---|:---:|:---:|
-| Langit Pagi | `ASSETS/ENVIRONMENT/SKY/Langit_Pagi.png` | Variable | 📥 Ditambahkan Tim |
-| Rumah & Pohon Finis | `ASSETS/ENVIRONMENT/Rumah dan Pohon.png` | Variable | 📥 Ditambahkan Tim |
-| Rumput Dekorasi | `ASSETS/ENVIRONMENT/Rumput1..3.png` | Variable | 📥 Ditambahkan Tim |
+| Langit Pagi | `ASSETS/ENVIRONMENT/SKY/Langit_Pagi.png` | 1024×256 | ✅ Terpasang di Gameplay |
+| Desa & Rumah Pohon | `ASSETS/ENVIRONMENT/Rumah dan Pohon.png` | 1536×256 | ✅ Terpasang di Gameplay |
+| Terrain Pijakan Rumput | `ASSETS/ENVIRONMENT/Rumput1..3.png` | 256×128 (3 variasi) | ✅ Terpasang di Y=448 |
+| Robi Walk Animation | `ASSETS/CHARACTER/PLAYER/walk_frames/robi_walk_00..09.png` | 128×128 (10 frames) | ✅ Terpasang di Gameplay |
 
 </details>
 
@@ -194,6 +195,12 @@ flowchart LR
 ---
 
 ## 📝 Changelog Terkini
+
+### [v0.5.0-alpha] — 2026-11-23
+- 🎮 **Modal Difficulty (Tahap 5):** Mengimplementasikan modal pemilihan 5 tingkat kesulitan (*Peaceful, Easy, Normal, Hard, Super Hard*) di Lobby dengan tombol panah `<` `>`, deskripsi dinamis, serta tombol Mulai (*Confirm*) dan Batal (*Back*).
+- 🌿 **Terrain Rumput & Scene Gameplay (Tahap 9):** Membangun lintasan dunia di scene Gameplay menggunakan susunan layer `BG_Sky` (`Langit_Pagi.png`), `BG_Village` (`Rumah dan Pohon.png`), serta deretan terrain padang rumput [Rumput1..3.png](file:///c:/Users/DELL/Downloads/Proffesionalsss/TTS/Roadside-Stick-/ASSETS/ENVIRONMENT/) di garis tanah Y=448.
+- 🚶 **Karakter Gameplay & Animasi Walk 10-Frame (Tahap 10):** Memotong 10 frame berjalan Robi (`robi_walk_00..09.png`) dan mengaktifkan kontrol gerakan (<kbd>A</kbd>/<kbd>D</kbd>) dengan kecepatan 160 px/detik, auto-flip arah hadap, transisi mulus ke Idle, dan kamera horizontal dinamis mengikuti pergerakan Robi.
+- ⏱️ **HUD Gameplay Dasar:** Menambahkan timer hitung mundur interaktif dan indikator kontrol di layer HUD.
 
 ### [v0.4.2-alpha] — 2026-11-23
 - 🏃 **Loading BG Ilustrasi `Tes64.png`:** Mengganti background Loading scene menjadi karya ilustrasi pixel art naratif `Tes64.png` (Robi berlari membawa ranting kayu dikejar motor orang tua). Tampilan diskalakan pixel-perfect (nearest neighbor) ke 1024×576.
