@@ -1116,6 +1116,74 @@
                   },
                   "parameters": [
                     "BootTimer",
+                    ">",
+                    "1.05"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "BootTimer",
+                    "<",
+                    "1.25"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetCameraX"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "512 + 4 * sin(Variable(BootTimer) * 60)",
+                    "\"\"",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "BootTimer",
+                    ">=",
+                    "1.25"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetCameraX"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "512",
+                    "\"\"",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarScene"
+                  },
+                  "parameters": [
+                    "BootTimer",
                     ">=",
                     "3.0"
                   ]
@@ -1142,15 +1210,15 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 115,
+          "height": 198,
           "keepRatio": true,
           "layer": "",
           "locked": false,
           "name": "Spr_BootLogo",
           "persistentUuid": "636fec16-1af6-4d77-8f56-3297ca91e9d4",
-          "width": 512,
-          "x": 256,
-          "y": 230,
+          "width": 884,
+          "x": 70,
+          "y": 189,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -1287,6 +1355,19 @@
                 }
               ],
               "actions": [
+                {
+                  "type": {
+                    "value": "PlayMusicOnChannel"
+                  },
+                  "parameters": [
+                    "",
+                    "bgm_loading.mp3",
+                    "1",
+                    "yes",
+                    "60",
+                    "1"
+                  ]
+                },
                 {
                   "type": {
                     "value": "ModVarScene"
@@ -1628,7 +1709,7 @@
                     {
                       "hasCustomCollisionMask": false,
                       "customCollisionMask": [],
-                      "image": "boot_loading_bg_dummy.png",
+                      "image": "DraftLoadingPXFix.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -2007,6 +2088,28 @@
                 }
               ],
               "actions": [
+                {
+                  "type": {
+                    "value": "StopMusicChannel"
+                  },
+                  "parameters": [
+                    "",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlayMusicOnChannel"
+                  },
+                  "parameters": [
+                    "",
+                    "bgm_menu.mp3",
+                    "1",
+                    "yes",
+                    "75",
+                    "1"
+                  ]
+                },
                 {
                   "type": {
                     "value": "TextObject::String"
@@ -2435,6 +2538,57 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Group",
+          "title": "[T3] Lobby — VFX & Efek Hidup",
+          "parameters": [
+            ""
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetX"
+                  },
+                  "parameters": [
+                    "Spr_PlayerLobby",
+                    "=",
+                    "48 + 3 * sin(TimeFromStart() * 1.5)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetY"
+                  },
+                  "parameters": [
+                    "Spr_PlayerLobby",
+                    "=",
+                    "190 + 2 * sin(TimeFromStart() * 2.0)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeOpacity"
+                  },
+                  "parameters": [
+                    "Btn_Play",
+                    "=",
+                    "220 + 35 * sin(TimeFromStart() * 2.5)"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "instances": [
@@ -2452,10 +2606,10 @@
         },
         {
           "name": "Spr_PlayerLobby",
-          "x": 60,
-          "y": 170,
-          "width": 360,
-          "height": 300,
+          "x": 48,
+          "y": 190,
+          "width": 384,
+          "height": 384,
           "customSize": true,
           "layer": "UI",
           "zOrder": 5,
@@ -2716,13 +2870,13 @@
               "useMultipleDirections": false,
               "directions": [
                 {
-                  "looping": false,
-                  "timeBetweenFrames": 1,
+                  "looping": true,
+                  "timeBetweenFrames": 0.12,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
                       "customCollisionMask": [],
-                      "image": "robi_lobby_waistup.png",
+                      "image": "robi_idle_00.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -2732,8 +2886,161 @@
                       "centerPoint": {
                         "automatic": true,
                         "name": "centre",
-                        "x": 12,
-                        "y": 10
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_01.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_02.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_03.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_04.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_05.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_06.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_07.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_08.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
+                      }
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "robi_idle_09.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 64,
+                        "y": 64
                       }
                     }
                   ]
@@ -4058,6 +4365,121 @@
         "metadata": "",
         "name": "btn_upgrade_pressed.png",
         "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/BOOT/LOADING/DraftLoadingPXFix.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "DraftLoadingPXFix.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/idle_frames/robi_idle_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_idle_00.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/idle_frames/robi_idle_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_idle_01.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/idle_frames/robi_idle_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_idle_02.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/idle_frames/robi_idle_03.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_idle_03.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/idle_frames/robi_idle_04.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_idle_04.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/idle_frames/robi_idle_05.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_idle_05.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/idle_frames/robi_idle_06.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_idle_06.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/idle_frames/robi_idle_07.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_idle_07.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/idle_frames/robi_idle_08.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_idle_08.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/CHARACTER/PLAYER/idle_frames/robi_idle_09.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "robi_idle_09.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/AUDIO/bgm_loading.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "bgm_loading.mp3",
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/AUDIO/bgm_menu.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "bgm_menu.mp3",
         "userAdded": true
       }
     ],

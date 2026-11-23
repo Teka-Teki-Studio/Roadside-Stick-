@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Project Version](https://img.shields.io/badge/Version-v0.3.0--alpha-yellow?style=for-the-badge&logo=git)
+![Project Version](https://img.shields.io/badge/Version-v0.4.0--alpha-yellow?style=for-the-badge&logo=git)
 ![Engine](https://img.shields.io/badge/Engine-GDevelop%205.6-blue?style=for-the-badge&logo=gdevelop)
 ![Platform](https://img.shields.io/badge/Platform-HTML5%20%7C%20itch.io-crimson?style=for-the-badge)
 ![Art Style](https://img.shields.io/badge/Style-16--bit%20Pixel%20Art-brightgreen?style=for-the-badge)
@@ -113,11 +113,13 @@ flowchart LR
 <br>
 
 - [x] **Tahap 0 — Foundation:** Pembersihan `game.json`, skema variabel global (`Save`, `Config`, `Data`, `Run`), 7 scene stub, sistem backup otomatis.
-- [x] **Tahap 1 — Boot:** Layar putih solid, kemunculan logo developer `boot_logo_dev.png`, transisi fade halus menuju Loading.
-- [x] **Tahap 2 — Loading Screen:** Background dummy, bar ramping 12px dengan action `ChangeWidth` presisi, spinner 8-frame animasi di sebelah kanan bar, load storage save.
-- [x] **Tahap 3 — Lobby (Interactive Mockup):**
+- [x] **Tahap 1 — Boot:** Layar putih solid, kemunculan logo developer `boot_logo_dev.png` tajam HD (884×198 px), efek kamera bergetar halus (*camera shake*) saat logo muncul, transisi fade halus menuju Loading.
+- [x] **Tahap 2 — Loading Screen:** Background baru pixel art `DraftLoadingPXFix.png`, backsound santai `bgm_loading.mp3`, bar ramping 12px dengan action `ChangeWidth` presisi, spinner 8-frame animasi di sebelah kanan bar, load storage save.
+- [x] **Tahap 3 — Lobby (Interactive Mockup & Living VFX):**
   - [x] Background `bg_lobby.png`.
-  - [x] Karakter Robi idle portrait besar (kepala-pinggang) di sebelah kiri.
+  - [x] Karakter Robi animasi **Idle 10 Frame** presisi (128×128 looping), ditampilkan portrait kepala-pinggang besar (384×384 px) di sebelah kiri.
+  - [x] Backsound nostalgic retro `bgm_menu.mp3` otomatis berganti saat memasuki menu.
+  - [x] **VFX & Polishing Dinamis:** Efek bernapas halus (*breathe oscillation*) pada Robi serta efek denyut pendaran (*subtle opacity pulse*) pada tombol Play utama.
   - [x] 4 Tombol 3D beranimasi (`Normal`, `Hover`, `Pressed`): Mainkan (Kuning), Toko (Kuning), Koleksi (Ungu), Upgrade (Kuning).
   - [x] Indikator HUD teks level & uang berbasis font `vcr.ttf`.
 - [ ] **Tahap 4 — Settings & About:** Modal pengaturan audio dan profil kreator.
@@ -146,17 +148,19 @@ flowchart LR
 ### 🖼️ Boot & Loading
 | Aset | File | Dimensi | Status |
 |---|---|:---:|:---:|
-| Logo Developer | `ASSETS/BOOT/LOGO/boot_logo_dev.png` | 2213×496 | ✅ Siap |
-| Loading Background | `ASSETS/BOOT/LOADING/boot_loading_bg_dummy.png` | 1672×941 | ✅ Siap |
+| Logo Developer | `ASSETS/BOOT/LOGO/boot_logo_dev.png` | 2213×496 | ✅ Siap (HD Display 884×198) |
+| Loading Background (Baru) | `ASSETS/BOOT/LOADING/DraftLoadingPXFix.png` | 1280×720 | ✅ Siap |
 | Loading Bar Frame | `ASSETS/BOOT/LOADING/boot_loading_bar_frame.png` | 1090×22 | ✅ Siap |
 | Loading Bar Fill | `ASSETS/BOOT/LOADING/boot_loading_bar_fill.png` | 1090×22 | ✅ Siap |
 | Spinner Indicator | `ASSETS/BOOT/LOADING/boot_loading_indicator_0..7.png` | 16×16 (8 frames) | ✅ Siap |
+| Backsound Loading | `ASSETS/AUDIO/bgm_loading.mp3` | Audio MP3 | ✅ Siap |
 
 ### 🏠 Lobby & UI
 | Aset | File | Dimensi | Status |
 |---|---|:---:|:---:|
 | Background Lobby | `ASSETS/LOBBY/bg_lobby.png` | 1672×941 | ✅ Siap |
-| Karakter Robi Bust | `ASSETS/CHARACTER/PLAYER/robi_lobby_waistup.png` | 24×20 (scaled 12x) | ✅ Siap |
+| Robi Idle Animation | `ASSETS/CHARACTER/PLAYER/idle_frames/robi_idle_00..09.png` | 128×128 (10 frames) | ✅ Siap |
+| Backsound Menu | `ASSETS/AUDIO/bgm_menu.mp3` | Audio MP3 | ✅ Siap |
 | Tombol Mainkan | `ASSETS/UI/BUTTONS/btn_play_*.png` (3 state) | 420×64 | ✅ Siap (3D Mockup) |
 | Tombol Toko | `ASSETS/UI/BUTTONS/btn_shop_*.png` (3 state) | 200×56 | ✅ Siap (3D Mockup) |
 | Tombol Koleksi | `ASSETS/UI/BUTTONS/btn_index_*.png` (3 state) | 200×56 | ✅ Siap (3D Mockup) |
@@ -189,6 +193,13 @@ flowchart LR
 ---
 
 ## 📝 Changelog Terkini
+
+### [v0.4.0-alpha] — 2026-11-23
+- 🖼️ **Boot Logo HD & Camera Shake:** Resolusi tampilan logo developer diperbesar dan diposisikan proporsional (884×198 px) dengan efek getaran kamera (*camera shake*) halus saat pertama kali muncul.
+- 🎨 **Update Loading Background:** Mengintegrasikan visual background resmi baru `DraftLoadingPXFix.png` menggantikan file dummy sebelumnya.
+- 🚶 **Robi Idle Animation 10 Frames:** Memotong dan merangkai animasi idle 10-frame secara presisi dari sheet `robi_sd.png`, ditampilkan dalam ukuran portrait kepala-pinggang (384×384 px) di sisi kiri layar Lobby.
+- 🎵 **Backsound & Audio Ambiance:** Mengimplementasikan BGM santai `bgm_loading.mp3` untuk Loading scene dan BGM retro nostalgia `bgm_menu.mp3` untuk Lobby utama pada channel audio independen.
+- ✨ **VFX & Polishing Dinamis:** Menambahkan dynamic float/breathe subtle oscillation pada karakter Robi dan denyut glow/pulse pada tombol Play utama untuk menciptakan nuansa hidup pada menu.
 
 ### [v0.3.0-alpha] — 2026-11-23
 - ✨ **Lobby Interaktif:** Implementasi susunan layout Lobby dengan portrait kepala-pinggang Robi di sisi kiri.

@@ -9,7 +9,7 @@
   - Animasi spinner 8-frame aktif berputar loop di sebelah teks loading.
   - Teks menggunakan font `vcr.ttf` (VCR OSD Mono), warna putih murni (#FFFFFF), outline & stroke dinonaktifkan total.
   - Durasi loading diperpanjang menjadi 4.0 detik agar transisi mulus dan dapat dinikmati.
-- [ ] **Tahap 3 — Lobby**: Belum dimulai.
+- [x] **Tahap 3 — Lobby (Interactive Mockup & Living VFX)**: Selesai. Robi portrait idle 10-frame (128x128 loop), 4 tombol 3D pixel-art responsif (Hover & Pressed), VFX breathing & pulsing, BGM loading & menu terintegrasi.
 - [ ] **Tahap 4 — Settings & About**: Belum dimulai.
 - [ ] **Tahap 5 — Difficulty**: Belum dimulai.
 - [ ] **Tahap 6 — Stick Index**: Belum dimulai.
@@ -34,7 +34,14 @@
 - **Tipografi:** Menggunakan font cr.ttf, warna putih murni 255;255;255, outline nonaktif (isOutlineEnabled: false).
 - **Validasi:** Kompilasi libGD 5.6.287 sukses untuk seluruh 7 scene dengan 0 error/diagnostics.
 
-### Update 2026-11-23 03:35 — Tahap 3: Mockup Interaktif Lobby
+### Update 2026-11-23 12:15 — Polish Visual: HD Logo, Loading BG, 10-Frame Robi, BGM, & VFX
+- **Boot Logo HD & Camera Shake:** Resolusi tampilan logo disesuaikan menjadi 884×198 px (skala proporsional 40% dari 2213×496) centered di layar 1024×576. Ditambahkan efek camera shake halus (amplitudo 4px) saat logo muncul pada 1.05s s.d. 1.25s.
+- **Loading Screen BG:** Mengintegrasikan visual background baru `DraftLoadingPXFix.png` (1280×720 RGBA) menggantikan dummy.
+- **Robi Idle 10 Frames:** Memotong 10 frame idle dari row 1 `robi_sd.png` (128×128 tiap frame) ke folder `ASSETS/CHARACTER/PLAYER/idle_frames/`. Ditampilkan dalam format portrait kepala-pinggang besar (384×384 px) di sisi kiri Lobby dengan loop mulus (0.12s per frame).
+- **Audio & BGM:** Mengintegrasikan `bgm_loading.mp3` pada Loading scene dan `bgm_menu.mp3` pada Lobby scene di channel 1 independen.
+- **Living VFX:** Ditambahkan dynamic float/breathe subtle oscillation pada Robi (`sin(TimeFromStart())`) dan denyut glow/pulse pada tombol Play di Lobby.
+- **Validasi:** Kompilasi libGD 5.6.287 sukses untuk seluruh 7 scene dengan 0 diagnostics.
+
 - **Karakter Idle (Robi):** Dicrop dari sprite sheet acuan (
 obi_sd.png), ditampilkan di sisi kiri Lobby dengan portrait waist-up besar (kepala-pinggang) tajam pixel-art.
 - **4 Tombol Interaktif 3D:**
