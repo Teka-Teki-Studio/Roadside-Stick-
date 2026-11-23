@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Project Version](https://img.shields.io/badge/Version-v0.4.0--alpha-yellow?style=for-the-badge&logo=git)
+![Project Version](https://img.shields.io/badge/Version-v0.4.1--alpha-yellow?style=for-the-badge&logo=git)
 ![Engine](https://img.shields.io/badge/Engine-GDevelop%205.6-blue?style=for-the-badge&logo=gdevelop)
 ![Platform](https://img.shields.io/badge/Platform-HTML5%20%7C%20itch.io-crimson?style=for-the-badge)
 ![Art Style](https://img.shields.io/badge/Style-16--bit%20Pixel%20Art-brightgreen?style=for-the-badge)
@@ -148,8 +148,9 @@ flowchart LR
 ### 🖼️ Boot & Loading
 | Aset | File | Dimensi | Status |
 |---|---|:---:|:---:|
-| Logo Developer | `ASSETS/BOOT/LOGO/boot_logo_dev.png` | 2213×496 | ✅ Siap (HD Display 884×198) |
-| Loading Background (Baru) | `ASSETS/BOOT/LOADING/DraftLoadingPXFix.png` | 1280×720 | ✅ Siap |
+| Logo Developer | `ASSETS/BOOT/LOGO/boot_logo_dev.png` | 2213×496 | ✅ Siap (Tampilan Compact 480×108) |
+| Loading Background (LibreSprite) | `ASSETS/BOOT/LOADING/BGLoadingPX.png` | 256×144 | ✅ Siap (Pixel Art 16:9) |
+| Logo Game Loading | `ASSETS/BOOT/LOADING/Logo Gam.png` | 333×214 | ✅ Siap (Posisi Kiri Atas) |
 | Loading Bar Frame | `ASSETS/BOOT/LOADING/boot_loading_bar_frame.png` | 1090×22 | ✅ Siap |
 | Loading Bar Fill | `ASSETS/BOOT/LOADING/boot_loading_bar_fill.png` | 1090×22 | ✅ Siap |
 | Spinner Indicator | `ASSETS/BOOT/LOADING/boot_loading_indicator_0..7.png` | 16×16 (8 frames) | ✅ Siap |
@@ -193,6 +194,12 @@ flowchart LR
 ---
 
 ## 📝 Changelog Terkini
+
+### [v0.4.1-alpha] — 2026-11-23
+- 🔍 **Boot Logo Proporsional:** Logo developer diperkecil ke ukuran yang lebih pas dan seimbang (480×108 px, centered).
+- 🖼️ **Crisp Loading Background & Game Logo:** Mengintegrasikan background pixel art kosongan `BGLoadingPX.png` (256×144) yang tajam pixel-perfect, serta menambahkan logo game `Logo Gam.png` di pojok kiri atas dengan margin aman.
+- 🧑‍🎨 **Robi Idle Frame 0 Clean:** Menghilangkan teks label "IDLE" yang sempat menempel di frame 0, memastikan ke-10 frame animasi bersih total.
+- 📐 **Lobby Robi Waist-Up Zoom:** Menyesuaikan ukuran zoom Robi di Lobby agar menampilkan karakter dari kepala hingga pinggang secara gagah di sisi kiri, serta menghapus efek gerak nafas posisi sesuai feedback.
 
 ### [v0.4.0-alpha] — 2026-11-23
 - 🖼️ **Boot Logo HD & Camera Shake:** Resolusi tampilan logo developer diperbesar dan diposisikan proporsional (884×198 px) dengan efek getaran kamera (*camera shake*) halus saat pertama kali muncul.

@@ -1210,15 +1210,15 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 198,
+          "height": 108,
           "keepRatio": true,
           "layer": "",
           "locked": false,
           "name": "Spr_BootLogo",
           "persistentUuid": "636fec16-1af6-4d77-8f56-3297ca91e9d4",
-          "width": 884,
-          "x": 70,
-          "y": 189,
+          "width": 480,
+          "x": 272,
+          "y": 234,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -1651,6 +1651,18 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "name": "Spr_LoadingLogo",
+          "x": 36,
+          "y": 28,
+          "width": 260,
+          "height": 167,
+          "customSize": true,
+          "layer": "Base",
+          "zOrder": 10,
+          "angle": 0,
+          "locked": false
         }
       ],
       "layers": [
@@ -1709,7 +1721,7 @@
                     {
                       "hasCustomCollisionMask": false,
                       "customCollisionMask": [],
-                      "image": "DraftLoadingPXFix.png",
+                      "image": "BGLoadingPX.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -2028,6 +2040,45 @@
           "fontResourceName": "vcr.ttf",
           "isOutlineEnabled": false,
           "outlineThickness": 0
+        },
+        {
+          "assetStoreId": "",
+          "name": "Spr_LoadingLogo",
+          "type": "Sprite",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "animations": [
+            {
+              "name": "Normal",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "customCollisionMask": [],
+                      "image": "Logo Gam.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 166,
+                        "y": 107
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -2552,32 +2603,6 @@
               "actions": [
                 {
                   "type": {
-                    "value": "SetX"
-                  },
-                  "parameters": [
-                    "Spr_PlayerLobby",
-                    "=",
-                    "48 + 3 * sin(TimeFromStart() * 1.5)"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetY"
-                  },
-                  "parameters": [
-                    "Spr_PlayerLobby",
-                    "=",
-                    "190 + 2 * sin(TimeFromStart() * 2.0)"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
                     "value": "ChangeOpacity"
                   },
                   "parameters": [
@@ -2606,10 +2631,10 @@
         },
         {
           "name": "Spr_PlayerLobby",
-          "x": 48,
-          "y": 190,
-          "width": 384,
-          "height": 384,
+          "x": -854,
+          "y": -706,
+          "width": 2176,
+          "height": 2176,
           "customSize": true,
           "layer": "UI",
           "zOrder": 5,
@@ -4481,6 +4506,24 @@
         "metadata": "",
         "name": "bgm_menu.mp3",
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/BOOT/LOADING/BGLoadingPX.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "BGLoadingPX.png",
+        "userAdded": true,
+        "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/BOOT/LOADING/Logo Gam.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Logo Gam.png",
+        "userAdded": true,
+        "smoothed": false
       }
     ],
     "resourceFolders": []

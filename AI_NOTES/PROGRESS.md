@@ -34,6 +34,13 @@
 - **Tipografi:** Menggunakan font cr.ttf, warna putih murni 255;255;255, outline nonaktif (isOutlineEnabled: false).
 - **Validasi:** Kompilasi libGD 5.6.287 sukses untuk seluruh 7 scene dengan 0 error/diagnostics.
 
+### Update 2026-11-23 12:30 — Revisi Detail: Boot Logo Compact, Loading Pixel-Art BG & Logo, Clean Robi Idle Frame, & Lobby Waist-Up Zoom
+- **Boot Logo Dikecilkan:** Logo developer dikecilkan menjadi 480×108 px (centered) agar proporsional dan tidak mendominasi layar.
+- **Loading Screen Tajam:** Background diperbarui ke `BGLoadingPX.png` (256×144) hasil export LibreSprite, menghasilkan tampilan pixel-art tajam tanpa blur. Ditambahkan logo game `Logo Gam.png` di kiri atas (X: 36, Y: 28) dengan margin aman.
+- **Pembersihan Frame 0 Idle Robi:** Menghapus 24 piksel label teks "IDLE" yang menempel di frame 0. Seluruh 10 frame idle kini bersih total 100%.
+- **Lobby Waist-Up Zoom:** Menyesuaikan ukuran tampilan Robi di Lobby menjadi waist-up portrait yang besar dan gagah di sisi kiri, serta menonaktifkan efek osilasi gerak nafas (posisi tetap stabil).
+- **Validasi:** Kompilasi libGD 5.6.287 sukses untuk seluruh 7 scene dengan 0 diagnostics.
+
 ### Update 2026-11-23 12:15 — Polish Visual: HD Logo, Loading BG, 10-Frame Robi, BGM, & VFX
 - **Boot Logo HD & Camera Shake:** Resolusi tampilan logo disesuaikan menjadi 884×198 px (skala proporsional 40% dari 2213×496) centered di layar 1024×576. Ditambahkan efek camera shake halus (amplitudo 4px) saat logo muncul pada 1.05s s.d. 1.25s.
 - **Loading Screen BG:** Mengintegrasikan visual background baru `DraftLoadingPXFix.png` (1280×720 RGBA) menggantikan dummy.
