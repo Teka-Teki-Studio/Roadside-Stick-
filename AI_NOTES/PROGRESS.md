@@ -34,6 +34,11 @@
 - **Tipografi:** Menggunakan font cr.ttf, warna putih murni 255;255;255, outline nonaktif (isOutlineEnabled: false).
 - **Validasi:** Kompilasi libGD 5.6.287 sukses untuk seluruh 7 scene dengan 0 error/diagnostics.
 
+### Update 2026-11-23 13:42 — Penggantian Loading BG ke Tes64.png
+- **Loading Background Baru:** Mengganti background `Spr_LoadingBg` menjadi `Tes64.png` (114×64 RGBA). Visual menampilkan ilustrasi naratif pixel-art Robi berlari membawa ranting kayu dikejar motor orang tua.
+- **Render Settings:** Resource didaftarkan dengan `smoothed: false` sehingga saat di-scale ke 1024×576 di GDevelop, pixel art-nya tampil tajam dan presisi rasio 16:9.
+- **Validasi:** Kompilasi libGD 5.6.287 sukses untuk seluruh 7 layout dengan 0 diagnostics.
+
 ### Update 2026-11-23 12:30 — Revisi Detail: Boot Logo Compact, Loading Pixel-Art BG & Logo, Clean Robi Idle Frame, & Lobby Waist-Up Zoom
 - **Boot Logo Dikecilkan:** Logo developer dikecilkan menjadi 480×108 px (centered) agar proporsional dan tidak mendominasi layar.
 - **Loading Screen Tajam:** Background diperbarui ke `BGLoadingPX.png` (256×144) hasil export LibreSprite, menghasilkan tampilan pixel-art tajam tanpa blur. Ditambahkan logo game `Logo Gam.png` di kiri atas (X: 36, Y: 28) dengan margin aman.

@@ -1721,7 +1721,7 @@
                     {
                       "hasCustomCollisionMask": false,
                       "customCollisionMask": [],
-                      "image": "BGLoadingPX.png",
+                      "image": "Tes64.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -4524,6 +4524,15 @@
         "name": "Logo Gam.png",
         "userAdded": true,
         "smoothed": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "ASSETS/BOOT/LOADING/Tes64.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Tes64.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []

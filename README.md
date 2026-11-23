@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Project Version](https://img.shields.io/badge/Version-v0.4.1--alpha-yellow?style=for-the-badge&logo=git)
+![Project Version](https://img.shields.io/badge/Version-v0.4.2--alpha-yellow?style=for-the-badge&logo=git)
 ![Engine](https://img.shields.io/badge/Engine-GDevelop%205.6-blue?style=for-the-badge&logo=gdevelop)
 ![Platform](https://img.shields.io/badge/Platform-HTML5%20%7C%20itch.io-crimson?style=for-the-badge)
 ![Art Style](https://img.shields.io/badge/Style-16--bit%20Pixel%20Art-brightgreen?style=for-the-badge)
@@ -149,7 +149,7 @@ flowchart LR
 | Aset | File | Dimensi | Status |
 |---|---|:---:|:---:|
 | Logo Developer | `ASSETS/BOOT/LOGO/boot_logo_dev.png` | 2213×496 | ✅ Siap (Tampilan Compact 480×108) |
-| Loading Background (LibreSprite) | `ASSETS/BOOT/LOADING/BGLoadingPX.png` | 256×144 | ✅ Siap (Pixel Art 16:9) |
+| Loading Background (Tes64) | `ASSETS/BOOT/LOADING/Tes64.png` | 114×64 | ✅ Siap (Pixel Art Ilustratif 16:9) |
 | Logo Game Loading | `ASSETS/BOOT/LOADING/Logo Gam.png` | 333×214 | ✅ Siap (Posisi Kiri Atas) |
 | Loading Bar Frame | `ASSETS/BOOT/LOADING/boot_loading_bar_frame.png` | 1090×22 | ✅ Siap |
 | Loading Bar Fill | `ASSETS/BOOT/LOADING/boot_loading_bar_fill.png` | 1090×22 | ✅ Siap |
@@ -194,6 +194,9 @@ flowchart LR
 ---
 
 ## 📝 Changelog Terkini
+
+### [v0.4.2-alpha] — 2026-11-23
+- 🏃 **Loading BG Ilustrasi `Tes64.png`:** Mengganti background Loading scene menjadi karya ilustrasi pixel art naratif `Tes64.png` (Robi berlari membawa ranting kayu dikejar motor orang tua). Tampilan diskalakan pixel-perfect (nearest neighbor) ke 1024×576.
 
 ### [v0.4.1-alpha] — 2026-11-23
 - 🔍 **Boot Logo Proporsional:** Logo developer diperkecil ke ukuran yang lebih pas dan seimbang (480×108 px, centered).
