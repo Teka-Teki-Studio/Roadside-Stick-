@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Project Version](https://img.shields.io/badge/Version-v0.5.0--alpha-yellow?style=for-the-badge&logo=git)
+![Project Version](https://img.shields.io/badge/Version-v0.5.1--alpha-yellow?style=for-the-badge&logo=git)
 ![Engine](https://img.shields.io/badge/Engine-GDevelop%205.6-blue?style=for-the-badge&logo=gdevelop)
 ![Platform](https://img.shields.io/badge/Platform-HTML5%20%7C%20itch.io-crimson?style=for-the-badge)
 ![Art Style](https://img.shields.io/badge/Style-16--bit%20Pixel%20Art-brightgreen?style=for-the-badge)
@@ -195,6 +195,11 @@ flowchart LR
 ---
 
 ## 📝 Changelog Terkini
+
+### [v0.5.1-alpha] — 2026-11-23
+- 🔍 **Kamera Gameplay Zoom In 2.8x & Close-Up Robi:** Mengaktifkan fitur `ZoomCamera 2.8x` pada scene Gameplay, membuat karakter Robi dan lingkungan terlihat close-up, detail, dan proporsional.
+- 🎨 **Pembersihan Ruang Kosong Hitam:** Mengatur background scene menjadi biru langit (`#639BFF` sesuai `Langit_Pagi.png`) serta memperluas ketinggian langit (450 px), sehingga seluruh area layar terisi penuh tanpa celah hitam (*zero black spots*).
+- 🌾 **Ekspansi Lintasan Terrain:** Memperpanjang jejeran rumput terrain pijakan menjadi 24 tile (hingga X: 6.144 px) dengan fokus vertikal kamera ($Y = 410$) tepat di atas tanah.
 
 ### [v0.5.0-alpha] — 2026-11-23
 - 🎮 **Modal Difficulty (Tahap 5):** Mengimplementasikan modal pemilihan 5 tingkat kesulitan (*Peaceful, Easy, Normal, Hard, Super Hard*) di Lobby dengan tombol panah `<` `>`, deskripsi dinamis, serta tombol Mulai (*Confirm*) dan Batal (*Back*).

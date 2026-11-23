@@ -4899,8 +4899,8 @@
       ]
     },
     {
-      "b": 0,
-      "r": 0,
+      "b": 255,
+      "r": 99,
       "v": 0,
       "behaviorsSharedData": [],
       "disableInputWhenNotFocused": false,
@@ -4940,6 +4940,39 @@
                   "parameters": [
                     "",
                     "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ZoomCamera"
+                  },
+                  "parameters": [
+                    "",
+                    "2.8",
+                    "\"\"",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ZoomCamera"
+                  },
+                  "parameters": [
+                    "",
+                    "2.8",
+                    "\"BG_Village\"",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ZoomCamera"
+                  },
+                  "parameters": [
+                    "",
+                    "2.8",
+                    "\"BG_Sky\"",
+                    "0"
                   ]
                 }
               ]
@@ -5187,7 +5220,19 @@
                   "parameters": [
                     "",
                     "=",
-                    "max(512, Spr_Player.X() + 64)",
+                    "max(185, Spr_Player.X() + 64)",
+                    "\"\"",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCameraY"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "410",
                     "\"\"",
                     "0"
                   ]
@@ -5199,8 +5244,32 @@
                   "parameters": [
                     "",
                     "=",
-                    "512 + (max(512, Spr_Player.X() + 64) - 512) * 0.5",
+                    "185 + (max(185, Spr_Player.X() + 64) - 185) * 0.5",
                     "\"BG_Village\"",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCameraY"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "410",
+                    "\"BG_Village\"",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCameraY"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "410",
+                    "\"BG_Sky\"",
                     "0"
                   ]
                 }
@@ -5249,7 +5318,7 @@
           "x": 0,
           "y": 0,
           "width": 1024,
-          "height": 300,
+          "height": 450,
           "customSize": true,
           "layer": "BG_Sky",
           "zOrder": 1,
@@ -5261,7 +5330,7 @@
           "x": 1024,
           "y": 0,
           "width": 1024,
-          "height": 300,
+          "height": 450,
           "customSize": true,
           "layer": "BG_Sky",
           "zOrder": 1,
@@ -5273,7 +5342,7 @@
           "x": 2048,
           "y": 0,
           "width": 1024,
-          "height": 300,
+          "height": 450,
           "customSize": true,
           "layer": "BG_Sky",
           "zOrder": 1,
@@ -5285,7 +5354,31 @@
           "x": 3072,
           "y": 0,
           "width": 1024,
-          "height": 300,
+          "height": 450,
+          "customSize": true,
+          "layer": "BG_Sky",
+          "zOrder": 1,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Spr_Sky",
+          "x": 4096,
+          "y": 0,
+          "width": 1024,
+          "height": 450,
+          "customSize": true,
+          "layer": "BG_Sky",
+          "zOrder": 1,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Spr_Sky",
+          "x": 5120,
+          "y": 0,
+          "width": 1024,
+          "height": 450,
           "customSize": true,
           "layer": "BG_Sky",
           "zOrder": 1,
@@ -5319,6 +5412,18 @@
         {
           "name": "Spr_Village",
           "x": 3072,
+          "y": 192,
+          "width": 1536,
+          "height": 256,
+          "customSize": true,
+          "layer": "BG_Village",
+          "zOrder": 2,
+          "angle": 0,
+          "locked": false
+        },
+        {
+          "name": "Spr_Village",
+          "x": 4608,
           "y": 192,
           "width": 1536,
           "height": 256,
@@ -5535,6 +5640,110 @@
           "angle": 0,
           "locked": false,
           "initialNumAnim": 0
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 4096,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 1
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 4352,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 2
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 4608,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 0
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 4864,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 1
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 5120,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 2
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 5376,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 0
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 5632,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 1
+        },
+        {
+          "name": "Spr_Terrain",
+          "x": 5888,
+          "y": 448,
+          "width": 256,
+          "height": 128,
+          "customSize": true,
+          "layer": "",
+          "zOrder": 5,
+          "angle": 0,
+          "locked": false,
+          "initialNumAnim": 2
         },
         {
           "name": "Spr_Player",
@@ -6326,7 +6535,8 @@
           "name": "IsMoving",
           "value": 0
         }
-      ]
+      ],
+      "g": 155
     },
     {
       "b": 0,

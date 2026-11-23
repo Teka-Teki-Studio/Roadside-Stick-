@@ -34,6 +34,15 @@
 - **Tipografi:** Menggunakan font cr.ttf, warna putih murni 255;255;255, outline nonaktif (isOutlineEnabled: false).
 - **Validasi:** Kompilasi libGD 5.6.287 sukses untuk seluruh 7 scene dengan 0 error/diagnostics.
 
+### Update 2026-11-23 14:15 — Gameplay Camera Zoom In 2.8x & Zero Black Spot Optimization
+- **Camera Zoom 2.8x:** Menambahkan aksi `ZoomCamera 2.8x` pada layer Base, BG_Village, dan BG_Sky. Karakter Robi kini terlihat close-up, gagah, dan retro pixel art-nya tampil tajam.
+- **Pembersihan Celah Hitam:**
+  - Background scene Gameplay diubah menjadi warna biru langit `#639BFF` (RGB: 99, 155, 255).
+  - Ketinggian instance `Spr_Sky` diperluas dari 300 menjadi 450 px hingga menyentuh garis tanah Y=448.
+  - Jumlah tile `Spr_Terrain` diperpanjang dari 16 menjadi 24 tile (hingga X: 6.144 px) dengan Rumput1..3 berselang-seling.
+- **Penyesuaian Posisi Kamera:** Kamera Y difokuskan pada $Y = 410$ (tepat di atas tanah dan Robi), dan minimum batas X disesuaikan ke 185 px untuk viewport 2.8x.
+- **Validasi:** Kompilasi libGD 5.6.287 sukses untuk seluruh 7 scene dengan 0 diagnostics.
+
 ### Update 2026-11-23 14:00 — Tahap 5 & Tahap 9-10: Modal Difficulty & Gameplay Playable Dasar
 - **Modal Difficulty (Tahap 5):**
   - Klik tombol `Btn_Play` di Lobby membuka layer `Modals` dengan dim background.
